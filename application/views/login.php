@@ -3,8 +3,7 @@
 		<h3 align="center" class="text-custom"><i class="fa fa-hospital" aria-hidden="true"></i></h3>
 		<h4 align="center" class="text-custom">Login to Your Account</h4>
 		<p class="text-secondary" align="center">Enter your username & password to login</p>
-		<?php 
-
+		<?php  
 			if(isset($_SESSION['success'])){
 				echo $_SESSION['success'];
 				unset($_SESSION['success']);
