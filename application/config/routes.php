@@ -52,3 +52,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+/**************************************/
+/*               Doctors              */
+/**************************************/
+$route['addDoctors'] = "Doctors/add";
+$route['viewDoctors'] = "Doctors/view";
+
+
+/******************************************/
+/*               Departments              */
+/******************************************/
+$route['addDepartment']  = "Departments/add";
+$route['viewDepartment'] = "Departments/view";
+
+
+/******************************************/
+/*               Patients                 */
+/******************************************/
+$route['addPatient']  = "Patients/add";
+$route['viewPatient'] = "Patients/view";
+
+/******************************************/
+/*               Appointments                 */
+/******************************************/
+$route['addAppointment']  = "Appointments/add";
+$route['viewAppointments'] = "Appointments/view";
+

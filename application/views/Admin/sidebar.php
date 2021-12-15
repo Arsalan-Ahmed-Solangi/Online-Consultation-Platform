@@ -15,12 +15,12 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="<?=base_url()?>addDepartment"> 
               <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Department</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="<?=base_url()?>viewDepartment">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Departments</span>
             </a>
           </li>
@@ -32,17 +32,17 @@
           <i class="fa fa-user-md"></i><span>Doctors</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
+          <li>	 
+            <a href="<?=base_url()?>addDoctors">
+              <i class="bi bi-circle"></i><span>Add Doctors</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            <a href="<?=base_url()?>viewDoctors">
+              <i class="bi bi-circle"></i><span>View Doctors</span>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="forms-editors.html">
               <i class="bi bi-circle"></i><span>Form Editors</span>
             </a>
@@ -51,7 +51,7 @@
             <a href="forms-validation.html">
               <i class="bi bi-circle"></i><span>Form Validation</span>
             </a>
-          </li>
+          </li> -->
         </ul>
       </li><!-- End Forms Nav -->
 
@@ -61,13 +61,13 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
+            <a href="<?=base_url()?>addPatient">
+              <i class="bi bi-circle"></i><span>Add Patient</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
+            <a href="<?=base_url()?>viewPatient">
+              <i class="bi bi-circle"></i><span>View Patient</span>
             </a>
           </li>
         </ul>
@@ -79,20 +79,20 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
+            <a href="<?=base_url()?>addAppointment">
+              <i class="bi bi-circle"></i><span>Add Appointment</span>
             </a>
           </li>
           <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
+            <a href="<?=base_url()?>viewAppointments">
+              <i class="bi bi-circle"></i><span>View Appointment</span>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="charts-echarts.html">
               <i class="bi bi-circle"></i><span>ECharts</span>
             </a>
-          </li>
+          </li> -->
         </ul>
       </li><!-- End Charts Nav -->
 
