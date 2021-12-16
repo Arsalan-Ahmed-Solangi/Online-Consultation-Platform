@@ -54,10 +54,18 @@
       		 $result = $this->db->delete($table);
       	}
 		//***End of Delete Function******//
-
-
-    }
+		
+		//**Start of Update Function*******//
+		public function update($table,$column_id,$id,$data)
+		{
+		 
+			$this->db->where($column_id, $id);
+			$result=$this->db->update($table, $data);
+			return $result;
+		}
+		//***End of Update Function******//
+ 
 	//****End of Database Model**********//
-
+	}
 
 ?>

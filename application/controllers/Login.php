@@ -85,7 +85,7 @@ class Login extends CI_Controller {
 			//***Start of Check Login Crendentials********//
 			 $data = array("username"=>$username ,"password"=>$password);
 			 $result = $this->Database->selectWhere($table,$data);
-
+			 
 			if(!empty($result)){
 
 				
@@ -126,6 +126,7 @@ class Login extends CI_Controller {
 
 	//***Start of Logout********//
 	public function logout(){
+		 
 		$this->session->unset_userdata('logged_in'); 
         $this->session->sess_destroy(); 
         redirect('Login');

@@ -18,7 +18,7 @@ class Departments extends CI_Controller {
         $this->load->view('Includes/header2',$title);
 		$this->load->view('Admin/navigation',$title);
 		$this->load->view('Admin/sidebar',$title); 
-		$this->load->view('add_department');
+		$this->load->view('Admin/add_department');
 		$this->load->view('Includes/footer.php');
 	}
 	 
@@ -30,7 +30,7 @@ class Departments extends CI_Controller {
         $this->load->view('Includes/header2',$title);
 		$this->load->view('Admin/navigation',$title);
 		$this->load->view('Admin/sidebar',$title); 
-		$this->load->view('view_department');
+		$this->load->view('Admin/view_department');
 		$this->load->view('Includes/footer.php');
 	}
  
