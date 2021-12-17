@@ -10,28 +10,28 @@ class Departments extends CI_Controller {
 		parent::__construct(); 
         $this->load->model('Database');
 	}
-	public function add()
-	{	
-		$title['title'] = "Add Department";
+	// public function add()
+	// {	
+	// 	$title['title'] = "Add Department";
        
-		$this->load->view('Includes/header',$title);
-        $this->load->view('Includes/header2',$title);
-		$this->load->view('Admin/navigation',$title);
-		$this->load->view('Admin/sidebar',$title); 
-		$this->load->view('Admin/add_department');
-		$this->load->view('Includes/footer.php');
-	}
+	// 	$this->load->view('Includes/header',$title);
+ //        $this->load->view('Includes/header2',$title);
+	// 	$this->load->view('Admin/navigation',$title);
+	// 	$this->load->view('Admin/sidebar',$title); 
+	// 	$this->load->view('Admin/add_department');
+	// 	$this->load->view('Includes/footer.php');
+	// }
 	 
-	public function view()
-	{	
-		$title['title'] = "View Department";
+	// public function view()
+	// {	
+	// 	$title['title'] = "View Department";
        
-		$this->load->view('Includes/header',$title);
-        $this->load->view('Includes/header2',$title);
-		$this->load->view('Admin/navigation',$title);
-		$this->load->view('Admin/sidebar',$title); 
-		$this->load->view('Admin/view_department');
-		$this->load->view('Includes/footer.php');
-	}
+	// 	$this->load->view('Includes/header',$title);
+ //        $this->load->view('Includes/header2',$title);
+	// 	$this->load->view('Admin/navigation',$title);
+	// 	$this->load->view('Admin/sidebar',$title); 
+	// 	$this->load->view('Admin/view_department');
+	// 	$this->load->view('Includes/footer.php');
+	// }
  
 }

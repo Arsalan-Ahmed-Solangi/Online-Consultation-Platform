@@ -14,7 +14,7 @@
 		<!-- End of Sidebar Logo -->
 
     
-		<!-- Start of Navigation -->
+	<!-- Start of Navigation -->
 		<?php include_once 'navigation.php';?>
 		<!-- End of Navigation -->
 

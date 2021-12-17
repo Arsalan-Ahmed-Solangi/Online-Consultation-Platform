@@ -35,9 +35,7 @@ class Admin extends CI_Controller {
 		$this->session->set_userdata("login",$result['loginData'] );
 
 		$this->load->view('Includes/header',$title);
-        $this->load->view('Includes/header2',$title);
-		$this->load->view('Admin/navigation',$title);
-		$this->load->view('Admin/sidebar',$title);
+  		
 
 		$this->load->view('Admin/profile.php',$result);
 		$this->load->view('Includes/footer.php');
@@ -47,7 +45,7 @@ class Admin extends CI_Controller {
 	 
 			//***Start of Setting Rules*****//
 			$this->form_validation->set_error_delimiters('<div class="error" style="color:red">','</div>');
-		$fullname=	$this->form_validation->set_rules('fullName', 'FullName', 'required|min_length[5]|max_length[20]');
+		    $fullname=	$this->form_validation->set_rules('fullName', 'FullName', 'required|min_length[5]|max_length[20]');
 			$this->form_validation->set_rules('userName','Email','trim|required|valid_email');
 			$this->form_validation->set_rules('status', 'Status', 'required');
 			//***End of Setting Rules******//

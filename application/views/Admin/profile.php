@@ -1,3 +1,29 @@
+<!-- Start of Header-->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+
+		<!-- Start of Sidebar Top -->
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+       
+        <span class="d-none d-lg-block">ADMIN PANEL</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+		<!-- End of Sidebar Logo -->
+
+    
+	<!-- Start of Navigation -->
+		<?php include_once 'navigation.php';?>
+		<!-- End of Navigation -->
+
+  </header>
+	<!-- End of Header -->
+
+  <!-- Start of Sidebar-->
+  <?php include_once 'sidebar.php' ?>
+	<!-- End of Sidebar-->
+<!-- End of Header  -->
 <main id="main" class="main" style='margin-top: 0px;'>  
 <section class="section dashboard">
 	<div class='col-md-12'>
