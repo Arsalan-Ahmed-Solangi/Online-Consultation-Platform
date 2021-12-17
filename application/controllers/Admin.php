@@ -24,10 +24,14 @@ class Admin extends CI_Controller {
 	public function index()
 	{	
 
-		$name['name'] = $this->session->userdata('admin')['name'];
+		//***Start of Get Enquiries******//
+		$data['enquiries'] = $this->Database->select('enquiries');
+		//***End of Get Enquiries*******//
+
+		$data['name'] = $this->session->userdata('admin')['name'];
 		$title['title'] = "Dashboard";
 		$this->load->view('Includes/header.php',$title);
-		$this->load->view('Admin/dashboard.php',$name);
+		$this->load->view('Admin/dashboard.php',$data);
 		$this->load->view('Includes/footer.php');
 	}
 	//****End of Admin Dashboard*********//

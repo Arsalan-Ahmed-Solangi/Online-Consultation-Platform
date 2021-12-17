@@ -31,7 +31,7 @@
     		$this->db->where($data);
     		$query = $this->db->get($table);
     		$result = $query->result_array();
-        	return $result[0];
+        	return $result[0] ?? null;
     	}
     	//***End of Select With Where**********//
 

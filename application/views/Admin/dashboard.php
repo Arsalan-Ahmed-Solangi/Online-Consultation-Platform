@@ -1,24 +1,6 @@
 
   <!-- Start of Header-->
-  <header id="header" class="header fixed-top d-flex align-items-center">
-
-
-		<!-- Start of Sidebar Top -->
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-       
-        <span class="d-none d-lg-block">ADMIN PANEL</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div>
-		<!-- End of Sidebar Logo -->
-
-    
-	<!-- Start of Navigation -->
-		<?php include_once 'navigation.php';?>
-		<!-- End of Navigation -->
-
-  </header>
+  <?php  include_once 'header.php' ?>
 	<!-- End of Header -->
 
   <!-- Start of Sidebar-->
@@ -44,154 +26,125 @@
         <div class="col-lg-12">
           <div class="row">
 
-            <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
+            <!--Start of Show Total Patients -->
+            <div class="col-xxl-4 col-md-4">
               <div class="card info-card sales-card">
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
+               
 
                 <div class="card-body">
-                  <h5 class="card-title">Sales <span>| Today</span></h5>
+                  <h5 class="card-title">Patients <span>| Total</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
+                      <i class="fa fa-users"></i>
                     </div>
                     <div class="ps-3">
                       <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
                     </div>
                   </div>
                 </div>
 
               </div>
-            </div><!-- End Sales Card -->
+            </div>
+            <!-- End of Show Total Patients -->
 
-            <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
+            <!-- Start of Show Total Doctors -->
+            <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
+              
 
                 <div class="card-body">
-                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                  <h5 class="card-title">Doctors <span>| Total</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
+                      <i class="fa fa-user-md"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
+                      <h6>20</h6>
+                     
                     </div>
                   </div>
                 </div>
 
               </div>
-            </div><!-- End Revenue Card -->
+            </div>
+            <!-- End of Show Total Doctors -->
 
-          
+            <!-- Start of Show Total Appointments  -->
+            <div class="col-xxl-4 col-md-4">
+              <div class="card info-card revenue-card">
+
+
+                <div class="card-body">
+                  <h5 class="card-title">Appointments <span>| Total</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="fa fa-address-card text-danger"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>20</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End of Show Total Appointments -->
 
   
-            <!-- Recent Sales -->
+            <!--Start of Show Total Enquiries -->
             <div class="col-12">
               <div class="card recent-sales">
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
+              
                 <div class="card-body">
-                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+                  <h5 class="card-title"><i class="fa fa-question-circle"></i> Enquiries</h5>
 
-                  <table class="table table-borderless datatable">
+                  <table class="table table-bordered table-striped table-hover datatable">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">SR#</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#2457</a></th>
-                        <td>Brandon Jacob</td>
-                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                        <td>$64</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2147</a></th>
-                        <td>Bridie Kessler</td>
-                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                        <td>$47</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2049</a></th>
-                        <td>Ashleigh Langosh</td>
-                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                        <td>$147</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Angus Grady</td>
-                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                        <td>$67</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Raheem Lehner</td>
-                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                        <td>$165</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
+                      <?php 
+                    
+
+                      foreach ($enquiries as $key => $value) {
+                          ?>
+                           <tr align="center">
+                            <th scope="row"><a href="#"><?php echo ++$key ?></a></th>
+                            <td><b><?php echo  $value['fullname'] ?></b></td>
+                            <td><?php echo  $value['email'] ?></td>
+                            <td><?php echo  $value['message'] ?></td>
+                            <td>
+                              <a href="" class="text-danger" style="font-size: 18px;"><i class="fa fa-trash"></i></a>
+                            </td>
+                          </tr>
+                          <?php
+                        }
+
+                      ?>
+                     
+                     
+  
                     </tbody>
                   </table>
 
                 </div>
 
               </div>
-            </div><!-- End Recent Sales -->
-
-         
+            </div>
+            <!-- End of Show Total Enquiries-->
 
           </div>
         </div><!-- End Left side columns -->
