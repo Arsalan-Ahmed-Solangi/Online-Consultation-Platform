@@ -53,39 +53,9 @@ $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+
+
 /**************************************/
 /*               Admin Profile        */
 /**************************************/
-$route['edit'] = "Admin/edit"; 
-
-/**************************************/
-/*               Logout               */
-/**************************************/
-$route['logout'] = "Login/logout"; 
-
-/**************************************/
-/*               Doctors              */
-/**************************************/
-$route['addDoctors'] = "Doctors/add";
-$route['viewDoctors'] = "Doctors/view";
-
-
-/******************************************/
-/*               Departments              */
-/******************************************/
-$route['addDepartment']  = "Departments/add";
-$route['viewDepartment'] = "Departments/view";
-
-
-/******************************************/
-/*               Patients                 */
-/******************************************/
-$route['addPatient']  = "Patients/add";
-$route['viewPatient'] = "Patients/view";
-
-/******************************************/
-/*               Appointments                 */
-/******************************************/
-$route['addAppointment']  = "Appointments/add";
-$route['viewAppointments'] = "Appointments/view";
-
+$route['profile'] = "Admin/profile"; 

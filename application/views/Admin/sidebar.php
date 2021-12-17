@@ -97,10 +97,10 @@
       </li><!-- End Charts Nav -->
 
 			<li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#Prescriptions" data-bs-toggle="collapse" href="#">
           <i class="fa fa-stethoscope"></i><span>Prescriptions</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="Prescriptions" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="charts-chartjs.html">
               <i class="bi bi-circle"></i><span>Chart.js</span>
@@ -151,12 +151,6 @@
         </a>
       </li>
 
-			<li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="fa fa-tint"></i>
-          <span>Blood Bank</span>
-        </a>
-      </li>
 
 			<li class="nav-item">
         <a class="nav-link collapsed" href="pages-contact.html">

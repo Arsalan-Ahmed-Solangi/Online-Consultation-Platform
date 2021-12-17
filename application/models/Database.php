@@ -56,10 +56,10 @@
 		//***End of Delete Function******//
 		
 		//**Start of Update Function*******//
-		public function update($table,$column_id,$id,$data)
+		public function update($table,$where,$data)
 		{
 		 
-			$this->db->where($column_id, $id);
+			$this->db->where($where);
 			$result=$this->db->update($table, $data);
 			return $result;
 		}

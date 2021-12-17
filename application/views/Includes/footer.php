@@ -39,7 +39,8 @@
 		$(document).ready(function(){
 
 			$("#form").validate();
-			$('.error').delay(2000).fadeOut('slow');
+      $(".form").validate();
+			$('.error').delay(4000).fadeOut('slow');
 		});
 	</script>
 	<!-- End of Javascript -->

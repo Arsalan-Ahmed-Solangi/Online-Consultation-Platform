@@ -108,7 +108,7 @@
                   <table class="table table-bordered table-striped table-hover datatable">
                     <thead>
                       <tr>
-                        <th scope="col">SR#</th>
+                        <th scope="col">SR</th>
                         <th scope="col">Full Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Message</th>
