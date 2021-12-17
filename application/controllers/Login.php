@@ -123,13 +123,4 @@ class Login extends CI_Controller {
 	}
 	//***End of Login Process************//
 
-
-	//***Start of Logout********//
-	public function logout(){
-		 
-		$this->session->unset_userdata('logged_in'); 
-        $this->session->sess_destroy(); 
-        redirect('Login');
-	}
-	//**End of Logout*********//
 }

@@ -15,15 +15,19 @@ class Admin extends CI_Controller {
 			redirect('Login');
 		}
 		// **End of Check Session*****//
+
+
 	}
 	//**End of Constructor*******//
 
 	//****Start of Admin Dashboard*******//
 	public function index()
 	{	
+
+		$name['name'] = $this->session->userdata('admin')['name'];
 		$title['title'] = "Dashboard";
 		$this->load->view('Includes/header.php',$title);
-		$this->load->view('Admin/dashboard.php');
+		$this->load->view('Admin/dashboard.php',$name);
 		$this->load->view('Includes/footer.php');
 	}
 	//****End of Admin Dashboard*********//

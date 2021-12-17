@@ -21,10 +21,10 @@
 	<!-- End of Header -->
 
   <!-- Start of Sidebar-->
-  <?php include_once 'sidebar.php' ?>
+    <?php include_once 'sidebar.php' ?>
 	<!-- End of Sidebar-->
 <!-- End of Header  -->
-<main id="main" class="main" style='margin-top: 0px;'>  
+<main id="main" class="main"	>  
 <section class="section dashboard">
 	<div class='col-md-12'>
 	
