@@ -100,7 +100,7 @@ class Admin extends CI_Controller {
 							$record = $this->session->userdata('admin');
 							$record['password'] = $newpassword;
 							$this->session->set_userdata('admin', $record); 
-							
+
 							$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Password updated successfully!</div>');
 						  redirect('Admin/profile');
 
@@ -128,45 +128,57 @@ class Admin extends CI_Controller {
 			 
 	}
 	//***End of Change Password********//
-	public function update()
-	{
-	 
-			//***Start of Setting Rules*****//
-			$this->form_validation->set_error_delimiters('<div class="error" style="color:red">','</div>');
-		    $fullname=	$this->form_validation->set_rules('fullName', 'FullName', 'required|min_length[5]|max_length[20]');
-			$this->form_validation->set_rules('userName','Email','trim|required|valid_email');
-			$this->form_validation->set_rules('status', 'Status', 'required');
-			//***End of Setting Rules******//
-			 
-				
-		//**Start of  Check Valdiation******//
-		if($this->form_validation->run() == FALSE)
-		{ 
-			$this->session->set_flashdata('error', '<p style="color:red" align="center">Record Updated Failed</p>');
-			redirect('edit');
-		}
-		else{
- 
-			$fullname = $this->input->post('fullName');
-			$username = $this->input->post('userName');
-			$status   = $this->input->post('status'); 
-			$id 	  = $this->input->post('hiddenAdminId');
 
-			$data = array(
-					'fullname' => $fullname,
-					'username' => $username,
-					'status_id' => $status, 
-					
-				); 
-				$result = $this->Database->update('admins','admin_id',$id,$data);
-		    if($result)
-			{
-				$this->session->set_flashdata('success', '<p style="color:green" align="center">Record Update Successgully</p>');
-			 
-				redirect('edit');
-			}
+
+	//****Start of Update Profile********//
+	public function updateProfile()
+	{
+
+		//***Start of Setting Rules*****//
+		$this->form_validation->set_error_delimiters('<div class="alert alert-danger error" >','</div>');
+	    $fullname=	$this->form_validation->set_rules('name', 'Full Name', 'required|min_length[5]|max_length[20]');
+		$this->form_validation->set_rules('username','Username','trim|required|valid_email');
+		//***End of Setting Rules******//
+
+		//***Start of Check Valdiation********//
+		if($this->form_validation->run() == FALSE){
+			$this->profile();
+		}else{
+
+
+			//***Start of Getting Inputs******//
+			$name = $this->input->post('name');
+			$username = $this->input->post('username');
+			//***End of Getting Inputs******//
+
+			$data = array
+					(
+						'name'     => $name,
+						'username' => $username,
+					);
+			$where = array('admin_id'=> $this->session->userdata('admin')['admin_id']);
+			$result = $this->Database->update('admins',$where,$data);
+
+			if($result){
+
+
+				$record = $this->session->userdata('admin');
+				$record['name'] = $name;
+				$record['username'] = $username;
+				$this->session->set_userdata('admin', $record); 
+
+				$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Profile successfully!</div>');
+				redirect('Admin/profile');
+
+			}else{
+				 $this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Failed to Updated</div>');
+					redirect('Admin/profile');
+
+			}	
 		}
+		//***End of Check Validation*******//
 	}
+	//****End of Update Profile********//
 
 
 }

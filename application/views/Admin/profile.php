@@ -45,20 +45,20 @@
 				 	<h4 class='text-dark'><i class="fa fa-user"></i> Profile Information</h4>
 				 </div>
 				<div class="card-body">
-				    <form action="" method="POST" class="form"> 
+				    <form action="<?php echo base_url('Admin/updateProfile');?>" method="POST" > 
 			 		<div class="row mt-2">
 			 			<div class="col-md-6 col-lg-6 col-sm-12">
 			 				<div class="form-group">
 			 					<label>Full Name <span class="text-danger">*</span></label>
-			 					<input value="<?php echo $profile['name'] ?>" type="text" maxlength="20" name="name" required placeholder="Enter Full Name" class="form-control">
+			 					<input value="<?php echo $profile['name'] ?>" type="text" maxlength="20" name="name"  placeholder="Enter Full Name" class="form-control">
 			 						<?php echo form_error('name') ?> 
 			 				</div>
 			 			</div>
 			 			<div class="col-md-6 col-lg-6 col-sm-12">
 			 				<div class="form-group">
 			 					<label>Username <span class="text-danger">*</span></label>
-			 					<input value="<?php echo $profile['username'] ?>" type="text" maxlength="50" name="email" required placeholder="Enter email address" class="form-control"> 
-			 					<?php echo form_error('email') ?> 
+			 					<input value="<?php echo $profile['username'] ?>" type="email" maxlength="50" name="username"  placeholder="Enter email address" class="form-control"> 
+			 					<?php echo form_error('username') ?> 
 			 				</div>
 			 			</div>
 			 		</div>
@@ -82,22 +82,22 @@
 				 <div class="card-header ">
 			
 				 	<h4 class='text-dark'><i class="fa fa-key"></i> Change Password</h4>
-				 
+
 				 </div>
 				<div class="card-body">
-				    <form action="<?php echo base_url('Admin/changePassword');?>" method="POST" class="form"> 
+				    <form action="<?php echo base_url('Admin/changePassword');?>" method="POST" > 
 			 		<div class="row mt-2">
 			 			<div class="col-md-6 col-lg-6 col-sm-12">
 			 				<div class="form-group">
 			 					<label>Old Password <span class="text-danger">*</span></label>
-			 					<input  type="password" maxlength="20" name="oldpassword"  placeholder="Enter Full Name" required class="form-control"> 
+			 					<input  type="password" maxlength="20" name="oldpassword"  placeholder="Enter your old password"  class="form-control"> 
 			 					<?php echo form_error('oldpassword') ?>
 			 				</div>
 			 			</div>
 			 			<div class="col-md-6 col-lg-6 col-sm-12">
 			 				<div class="form-group">
 			 					<label>New Password <span class="text-danger">*</span></label>
-			 					<input  type="password" maxlength="20" name="newpassword"  placeholder="Enter email address" required class="form-control"> 
+			 					<input  type="password" maxlength="20" name="newpassword"  placeholder="Enter your new password"  class="form-control"> 
 			 						<?php echo form_error('newpassword') ?>
 			 				</div>
 			 			</div>
@@ -107,7 +107,7 @@
 			 			<div class="col-md-6 col-lg-6 col-sm-12">
 			 				<div class="form-group">
 			 					<label>Confirm Password <span class="text-danger">*</span></label>
-			 					<input  type="password" maxlength="20" name="confirmpassword"  placeholder="Enter email address" required class="form-control"> 
+			 					<input  type="password" maxlength="20" name="confirmpassword"  placeholder="Confirm your password"  class="form-control"> 
 			 						<?php echo form_error('confirmpassword') ?>
 			 				</div>
 			 			</div>
