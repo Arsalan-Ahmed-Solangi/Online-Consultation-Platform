@@ -33,13 +33,13 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>	 
-            <a href="<?=base_url()?>addDoctors">
-              <i class="bi bi-circle"></i><span>Add Doctors</span>
+            <a href="<?=base_url('Doctors/add')?>">
+              <i class="fa fa-plus-circle"></i><span>Add Doctors</span>
             </a>
           </li>
           <li>
-            <a href="<?=base_url()?>viewDoctors">
-              <i class="bi bi-circle"></i><span>View Doctors</span>
+            <a href="<?=base_url('Doctors')?>">
+              <i class="fa fa-eye"></i><span>View Doctors</span>
             </a>
           </li>
           <!-- <li>

@@ -74,6 +74,19 @@
 			return $result;
 		}
 		//***End of Update Function******//
+
+		//****Start of 2 tables Join******//
+		public function selectJoin($table,$table_join,$join,$where){
+
+			$this->db->select('*');
+			$this->db->from($table);
+			$this->db->join($table_join,$join);
+			$this->db->where($where);
+            $query = $this->db->get();
+            $result = $query->result_array();
+        	return $result;
+		}
+		//***End of 2 tables Join*******//
  
 	//****End of Database Model**********//
 	}
