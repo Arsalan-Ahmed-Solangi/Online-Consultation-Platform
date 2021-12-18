@@ -10,6 +10,20 @@ class Departments extends CI_Controller {
 		parent::__construct(); 
         $this->load->model('Database');
 	}
+
+	//****End of Constructor*******//
+
+	//***Start of View Departments********//
+	public function index(){
+
+
+		$title['title'] = "Dashboard";
+		$this->load->view('Includes/header',$title);
+		$this->load->view('Admin/view_departments');
+		$this->load->view('Includes/footer');
+		
+	}
+	//***End of View Departments********//
 	// public function add()
 	// {	
 	// 	$title['title'] = "Add Department";

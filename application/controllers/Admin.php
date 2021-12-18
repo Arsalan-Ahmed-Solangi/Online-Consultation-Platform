@@ -29,7 +29,6 @@ class Admin extends CI_Controller {
 		$data['enquiries'] = $this->Database->select('enquiries');
 		//***End of Get Enquiries*******//
 
-		$data['name'] = $this->session->userdata('admin')['name'];
 		$title['title'] = "Dashboard";
 		$this->load->view('Includes/header',$title);
 		$this->load->view('Admin/dashboard',$data);
@@ -42,7 +41,7 @@ class Admin extends CI_Controller {
 	public function profile()
 	{	
 		
-		$data['name'] = $this->session->userdata('admin')['name'];
+		
 		$data['profile'] = $this->session->userdata('admin');
 		$title['title'] = "Profile";
 		$this->load->view('Includes/header',$title);
@@ -189,11 +188,11 @@ class Admin extends CI_Controller {
 			$result = $this->Database->delete("enquiries",$where);
 			if($result){
 					$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Enquiry deleted successfully!</div>');
-				redirect('Admin');
+				redirect('Admin/index');
 
 			}else{
 				 $this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Failed to Delete</div>');
-					redirect('Admin');
+					redirect('Admin/index');
 			}
 
 	}

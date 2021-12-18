@@ -4,17 +4,7 @@
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 	<!-- End of Back To Top -->
 
- <!-- Start of Footer -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Developers 2021</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-     
-      Designed by Arsalan & Adeeb
-    </div>
-  </footer>
-	<!-- End of Footer -->
+ 
 
 	<!-- Start of Javascript-->
 

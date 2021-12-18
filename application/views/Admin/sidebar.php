@@ -20,7 +20,7 @@
             </a>
           </li>
           <li>
-            <a href="<?=base_url()?>viewDepartment">
+            <a href="<?=base_url('Departments')?>">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Departments</span>
             </a>
           </li>

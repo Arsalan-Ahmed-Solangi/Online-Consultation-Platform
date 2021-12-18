@@ -152,7 +152,9 @@
       </div>
     </section>
 
+
+  <!-- Start of Footer -->
+  <?php  include_once 'footer.php';?>
+  <!-- End of Footer -->
+
   </main><!-- End #main -->
-
-
-  
