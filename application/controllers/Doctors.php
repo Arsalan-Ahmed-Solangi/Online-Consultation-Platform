@@ -29,6 +29,24 @@ class Doctors extends CI_Controller {
 	//***End of View Doctors******//
 
 
+	//****Start of Show Doctor******//
+	public function show($doctor_id){
+
+		//***Start of Get Departments******//
+		$join = "doctors.dept_id = departments.dept_id";
+		$data['doctor'] = $this->Database->selectJoin('doctors','departments',$join,array('doctor_status != '=>3,'doctor_id'=>$doctor_id));
+
+
+		//***End of Get Departments*******//
+
+		$title['title'] = "Doctor Details";
+		$this->load->view('Includes/header',$title);
+		$this->load->view('Admin/show_doctor',$data);
+		$this->load->view('Includes/footer');
+	}
+	//****End of show Doctor******//
+
+
 	//****Start of Change Doctor Status********//
 	public function status($doctor_id,$status_id){
 
