@@ -50,4 +50,21 @@ class Doctors extends CI_Controller {
 	}
 	//***End of Change Doctor Status*********//
 
+
+	//***Start of Delete Doctor********//
+	public function delete($doctor_id,$status_id){
+
+		$data = array('doctor_status' => 3);
+		$where = array('doctor_id'=>$doctor_id);
+		$result = $this->Database->update("doctors",$where,$data);
+		if($result){
+			$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Doctor Deleted successfully</div>');
+						  redirect('Doctors');
+		}else{
+			$this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Doctor delete failed!</div>');
+					redirect('Doctors');
+		}
+	}
+	//***End of Delete Doctor********//
+
 }

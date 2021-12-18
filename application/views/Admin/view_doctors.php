@@ -97,7 +97,7 @@
 				    								?>
 				    									<a href="<?php echo base_url('Doctors/show/').$value['doctor_id'];?>" class="badge bg-dark"><i class="fa fa-eye"></i></a>
 				    								<a href="<?php echo base_url('Doctors/edit/').$value['doctor_id'];?>" class="badge bg-primary"><i class="fa fa-edit"></i></a>
-				    								<a href="<?php echo base_url('Doctors/delete/').$value['doctor_id'];?>" class="badge bg-danger"><i class="fa fa-trash"></i></a>
+				    								<a href="<?php echo base_url('Doctors/delete/').$value['doctor_id'].'/'.$value['doctor_status'];?>" class="badge bg-danger"><i class="fa fa-trash"></i></a>
 				    							</td>
 				    						</tr>
 				    						<?php
