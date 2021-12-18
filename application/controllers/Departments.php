@@ -63,7 +63,7 @@ class Departments extends CI_Controller {
 			$data = array
 					(
 						'dept_name'     => $dept_name ?? null,
-						'dept_desc'     => $dept_desc ?? nul,
+						'dept_desc'     => $dept_desc ?? null,
 						'status_id'     => 1,
  					);
 	
@@ -147,7 +147,7 @@ class Departments extends CI_Controller {
 			$data = array
 					(
 						'dept_name'     => $dept_name ?? null,
-						'dept_desc' => $dept_desc ?? nul,
+						'dept_desc' => $dept_desc ?? null,
 					);
 			$where = array('dept_id'=> $dept_id);
 			$result = $this->Database->update('departments',$where,$data);

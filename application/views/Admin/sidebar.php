@@ -158,13 +158,24 @@
           <span>Notices</span>
         </a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
+        <a class="nav-link collapsed" data-bs-target="#icons-nav_faq" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-question-circle"></i><span>F.A.Q</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      </li><!-- End F.A.Q Page Nav -->
+        <ul id="icons-nav_faq" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a  href="<?php echo base_url('Faq/add');?>">
+              <i class="fa fa-question-circle" style="font-size:12px"></i><span>Add Faq</span>
+            </a>
+          </li>
+          <li>
+            <a  href="<?=base_url('Faq')?>">
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Faq</span>
+            </a>
+          </li> 
+        </ul>
+      </li>
+      <!-- End F.A.Q Page Nav -->
 
 
       <li class="nav-item">
