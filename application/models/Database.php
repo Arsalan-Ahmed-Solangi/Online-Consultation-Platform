@@ -36,6 +36,16 @@
     	//***End of Select With Where**********//
 
 
+    	//***Start of Select All with Where*********//
+    	public function selectAll($table,$data)
+    	{
+    		$this->db->where($data);
+    		$query = $this->db->get($table);
+    		$result = $query->result_array();
+        	return $result;
+    	}
+    	//***End of Select All with Where*********//
+
 
     	//***Start of Select Row*********//
     	public function selectRow($table,$data)

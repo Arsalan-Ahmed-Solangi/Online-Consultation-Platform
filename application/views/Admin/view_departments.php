@@ -44,7 +44,7 @@
 				 	<h4 class='text-dark'> <i class="fa fa-eye"></i> View Departments</h4>
 				  </div>
 					<div class="card-body">
-				    	<table class="table table-bordered table-striped table-hover datatable">
+				    	<table class="table table-borderless table-striped table-hover datatable">
 				    			<thead>
 				    				<tr>
 				    					<th>SR</th>
@@ -54,6 +54,51 @@
 				    					<th>Action</th>
 				    				</tr>
 				    			</thead>
+				    			<tbody>
+				    				<?php 
+
+				    					foreach ($departments as $key => $value) {
+				    						?>
+				    						<tr>
+				    							<td><?php echo ++$key?></td>
+				    							<td><?php echo $value['dept_name']?></td>
+				    							<td><?php echo $value['dept_desc']?></td>
+				    							<td>
+				    								<?php 
+
+				    									if($value['status_id'] == 1){
+				    										?>
+				    										<span class="badge bg-success">Active</span>
+				    										<?php
+				    									}else if($value['status_id'] == 2){
+																?>
+				    										<span class="badge bg-danger">Inactive</span>
+				    										<?php
+				    									}
+
+				    								?>
+				    							</td>
+				    							<td>
+				    								<?php 
+
+				    									if($value['status_id'] == 1){
+				    										?>
+				    										<a href="<?php echo base_url('Departments/status/').$value['dept_id'].'/'.$value['status_id'];?>" class="badge bg-danger">Inactive</a>
+				    										<?php
+				    									}else if($value['status_id'] == 2){
+				    										?>
+				    										<a href="<?php echo base_url('Departments/status/').$value['dept_id'].'/'.$value['status_id'];?>" class="badge bg-success">Active</a>
+				    										<?php
+				    									}	
+
+				    								?>
+				    							</td>
+				    						</tr>
+				    						<?php
+				    					}
+
+				    				?>
+				    			</tbody>
 				    	</table>
 					</div>
 	 			</div>
