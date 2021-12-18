@@ -49,7 +49,7 @@
 				    			<div class="col-md-12 col-lg-12 col-sm-12">
 				    				<div class="form-group">
 				    					<label>Department Name <span class="text-danger">*</span></label>
-				    					<input value="<?php  echo $department['dept_name'] ?>"  type="text" maxlength="20" name="dept_name" required placeholder="Enter Department Name" class="form-control">
+				    					<input value="<?php  echo $department['dept_name'] ?? null ?>"  type="text" maxlength="20" name="dept_name" required placeholder="Enter Department Name" class="form-control">
 				    					<?php echo form_error('dept_name') ?>
 				    				</div>
 				    			</div>
@@ -60,7 +60,7 @@
 				    			<div class="col-md-12 col-lg-12 col-sm-12">
 				    				<div class="form-group mt-2">
 				    					<label>Department Description <span class="text-danger">*</span></label>
-				    					<textarea name="dept_desc" id="editor" class="form-control" required placeholder="Enter Department Description"></textarea>
+				    					<textarea name="dept_desc" id="editor" class="form-control" required placeholder="Enter Department Description"><?php  echo $department['dept_desc']  ?? null ?></textarea>
 				    					<?php echo form_error('dept_desc') ?>
 				    				</div>
 				    			</div>

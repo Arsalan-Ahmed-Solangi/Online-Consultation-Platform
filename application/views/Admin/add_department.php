@@ -41,65 +41,52 @@
 		    ?>
 				<div class="card"> 
 				  <div class="card-header ">
-				 	<h4 class='text-dark'> <i class="fa fa-eye"></i> View Departments</h4>
+				 	<h4 class='text-dark'> <i class="fa fa-plus-circle"></i> Add Department</h4>
 				  </div>
 					<div class="card-body">
-				    	<table class="table table-borderless table-striped table-hover datatable">
-				    			<thead>
-				    				<tr>
-				    					<th>SR</th>
-				    					<th>Department Name</th>
-				    					<th>Department Description</th>
-				    					<th>Status</th>
-				    					<th>Action</th>
-				    				</tr>
-				    			</thead>
-				    			<tbody>
-				    				<?php 
+				    	<form action="<?php echo base_url('Departments/create');?>" method="POST" id="form">
+				    		<div class="row mt-2">
+				    			<div class="col-md-6 col-lg-6 col-sm-12">
+				    				<div class="form-group">
+				    					<label>Department Name <span class="text-danger">*</span></label>
+				    					<input value="<?php  echo $department['dept_name'] ?? null ?>"  type="text" maxlength="20" name="dept_name" required placeholder="Enter Department Name" class="form-control">
+				    					<?php echo form_error('dept_name') ?>
+				    				</div>
+				    			</div>
 
-				    					foreach ($departments as $key => $value) {
-				    						?>
-				    						<tr>
-				    							<td><?php echo ++$key?></td>
-				    							<td><?php echo $value['dept_name']?></td>
-				    							<td><?php echo $value['dept_desc']?></td>
-				    							<td>
-				    								<?php 
+				    			<div class="col-md-6 col-lg-6 col-sm-12">
+				    				<div class="form-group">
+				    					<label>Department Status <span class="text-danger">*</span></label>
+				    					<select name="Status_id" required class="form-select">
+				    						<option value="">---SELECT STATUS---</option>
+				    						<option value="1">Active</option>
+				    						<option value="2">Inactive</option>
+				    					</select>
+				    					<?php echo form_error('status_id') ?>
+				    				</div>
+				    			</div>
+				    		</div>
+				    			<div class="row mt-2">
+				    			<div class="col-md-12 col-lg-12 col-sm-12">
+				    				<div class="form-group mt-2">
+				    					<label>Department Description <span class="text-danger">*</span></label>
+				    					<textarea name="dept_desc" id="editor" class="form-control" required placeholder="Enter Department Description"></textarea>
+				    					<?php echo form_error('dept_desc') ?>
+				    				</div>
+				    			</div>
+				    		
+				    		</div>
 
-				    									if($value['status_id'] == 1){
-				    										?>
-				    										<span class="badge bg-success">Active</span>
-				    										<?php
-				    									}else if($value['status_id'] == 2){
-																?>
-				    										<span class="badge bg-danger">Inactive</span>
-				    										<?php
-				    									}
+				    		<div class="row">
+						 			<div class="col-md-12 col-lg-12 col-sm-12 offset-md-10">
+						 				<div class="form-group mt-3">
+						 				
+						 					<button type="submit"  name="updateDepartment" class="btn btn-primary">Create</button> 
 
-				    								?>
-				    							</td>
-				    							<td>
-				    								<?php 
-
-				    									if($value['status_id'] == 1){
-				    										?>
-				    										<a href="<?php echo base_url('Departments/status/').$value['dept_id'].'/'.$value['status_id'];?>" class="badge bg-danger">Inactive</a>
-				    										<?php
-				    									}else if($value['status_id'] == 2){
-				    										?>
-				    										<a href="<?php echo base_url('Departments/status/').$value['dept_id'].'/'.$value['status_id'];?>" class="badge bg-success">Active</a>
-				    										<?php
-				    									}	
-
-				    								?>
-				    							</td>
-				    						</tr>
-				    						<?php
-				    					}
-
-				    				?>
-				    			</tbody>
-				    	</table>
+						 				</div>
+						 			</div>
+						 		</div>
+				    	</form>
 					</div>
 	 			</div>
 	</div>	

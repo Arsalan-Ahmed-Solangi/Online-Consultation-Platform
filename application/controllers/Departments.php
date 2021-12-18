@@ -30,6 +30,62 @@ class Departments extends CI_Controller {
 	//***End of View Departments********//
 
 
+	//****Start of Add Department********//
+	public function add()
+	{
+		$title['title'] = "Add Department";
+		$this->load->view('Includes/header',$title);
+		$this->load->view('Admin/add_department');
+		$this->load->view('Includes/footer');
+	}
+	//***End of Add Department**********//
+
+	//****Start of Create Department*******//
+	public function create(){
+
+		//***Start of Setting Rules*****//
+		$this->form_validation->set_error_delimiters('<div class="alert alert-danger error" >','</div>');
+	    $fullname=	$this->form_validation->set_rules('dept_name', 'Department Name', 'required|trim|max_length[20]|callback_alpha_dash_space');
+		$this->form_validation->set_rules('dept_desc','Department description','required');
+		//***End of Setting Rules******//
+
+		//***Start of Check Valdiation********//
+		if($this->form_validation->run() == FALSE){
+			$this->add();
+		}else{
+
+
+			//***Start of Getting Inputs******//
+			$dept_name = $this->input->post('dept_name');
+			$dept_desc = $this->input->post('dept_desc');
+			//***End of Getting Inputs******//
+
+			$data = array
+					(
+						'dept_name'     => $dept_name ?? null,
+						'dept_desc'     => $dept_desc ?? nul,
+						'status_id'     => 1,
+ 					);
+	
+			$result = $this->Database->insert('departments',$data);
+
+			if($result){
+
+				$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Department created successfully!</div>');
+				redirect('Departments');
+
+			}else{
+				 $this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Failed to created</div>');
+					redirect('Departments');
+
+			}	
+		}
+		//***End of Check Validation*******//
+
+	}
+	//****End of Create Department********//
+
+
 	//****Start of Change Department Status********//
 	public function status($dept_id,$status_id){
 

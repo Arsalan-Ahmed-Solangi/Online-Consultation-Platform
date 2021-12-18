@@ -15,7 +15,7 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?=base_url()?>addDepartment"> 
+            <a href="<?=base_url('Departments/add')?>"> 
               <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Department</span>
             </a>
           </li>
