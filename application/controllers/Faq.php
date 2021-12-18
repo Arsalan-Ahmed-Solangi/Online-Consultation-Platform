@@ -26,9 +26,9 @@ class Faq extends CI_Controller {
 
         public function index()
         {	 
-            //***Start of Get Notices******//
+            //***Start of Get Faq******//
             $data['faq'] = $this->Database->select('faqs',array('status_id'!=3));
-            //***End of Get Notices*******// 
+            //***End of Get Faq*******// 
             $title['title'] = "FAQ";
             $this->load->view('Includes/header',$title);
             $this->load->view('Admin/view_faq',$data);

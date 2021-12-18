@@ -184,7 +184,23 @@
           </li> 
         </ul>
       </li>
-      <!-- End F.A.Q Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav_rec" data-bs-toggle="collapse" href="#">
+          <i class="bi-reception-3"></i><span>Receptionists</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav_rec" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a  href="<?php echo base_url('Receptionists/add');?>">
+              <i class="bi-reception-3" style="font-size:12px"></i><span>Add Receptionist</span>
+            </a>
+          </li>
+          <li>
+            <a  href="<?=base_url('Receptionists')?>">
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Receptionists</span>
+            </a>
+          </li> 
+        </ul>
+      </li>
 
 
       <li class="nav-item">
