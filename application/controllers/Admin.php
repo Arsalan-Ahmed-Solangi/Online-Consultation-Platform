@@ -181,4 +181,23 @@ class Admin extends CI_Controller {
 	//****End of Update Profile********//
 
 
+	//***Start of Delete Enquiry*****//
+	public function deleteEnquiry($id){
+
+
+			$where = array("id"=>$id);
+			$result = $this->Database->delete("enquiries",$where);
+			if($result){
+					$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Enquiry deleted successfully!</div>');
+				redirect('Admin');
+
+			}else{
+				 $this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Failed to Delete</div>');
+					redirect('Admin');
+			}
+
+	}
+	//***End of Delete Enquiery******//
+
+
 }

@@ -127,7 +127,7 @@
                             <td><?php echo  $value['email'] ?></td>
                             <td><?php echo  $value['message'] ?></td>
                             <td>
-                              <a href="" class="text-danger" style="font-size: 18px;"><i class="fa fa-trash"></i></a>
+                              <a href="<?php echo base_url('Admin/deleteEnquiry/').$value['id'];?>" class="text-danger" style="font-size: 18px;"><i class="fa fa-trash"></i></a>
                             </td>
                           </tr>
                           <?php
