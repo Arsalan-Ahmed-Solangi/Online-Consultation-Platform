@@ -79,7 +79,6 @@
 				    								?>
 				    							</td>
 				    							<td>
-
 				    								<?php 
 
 				    									if($value['status_id'] == 1){
@@ -93,7 +92,6 @@
 				    									}	
 
 				    								?>
-				    								<a href="<?php echo base_url('Departments/edit/').$value['dept_id'];?>" class="badge bg-primary"><i class="fa fa-edit"></i></a>
 				    							</td>
 				    						</tr>
 				    						<?php
