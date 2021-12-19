@@ -59,8 +59,6 @@ class Reset extends CI_Controller {
 				redirect('Reset');
 			}
 			//****End of Get Role Table********//
-
-
 			
 			//***Start of Verify Email*******//
 			$where = array("username" => $username);
