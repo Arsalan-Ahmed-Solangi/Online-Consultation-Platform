@@ -62,12 +62,12 @@
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="<?php echo base_url('Patients/add');?>">
-              <i class="bi bi-circle"></i><span>Add Patient</span>
+               <i class="fa fa-plus-circle" style="font-size:12px"></i>Add Patient</span>
             </a>
           </li>
           <li>
             <a href="<?php echo base_url('Patients');?>">
-              <i class="bi bi-circle"></i><span>View Patient</span>
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Patient</span>
             </a>
           </li>
         </ul>
@@ -80,12 +80,12 @@
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="<?=base_url()?>addAppointment">
-              <i class="bi bi-circle"></i><span>Add Appointment</span>
+               <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Appointment</span>
             </a>
           </li>
           <li>
             <a href="<?=base_url()?>viewAppointments">
-              <i class="bi bi-circle"></i><span>View Appointment</span>
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Appointment</span>
             </a>
           </li>
           <!-- <li>
@@ -102,57 +102,46 @@
         </a>
         <ul id="Prescriptions" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
+            <a href="<?=base_url()?>addAppointment">
+               <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Prescriptions</span>
             </a>
           </li>
           <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
+            <a href="<?=base_url()?>viewAppointments">
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Prescriptions</span>
             </a>
           </li>
         </ul>
       </li>
 
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="fa fa-users"></i><span>Human Resources</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="fa fa-user" style="font-size:12px"></i><span>Nurse</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="fa fa-user" style="font-size:12px"></i><span>Receptionists</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="fa fa-user" style="font-size:12px"></i><span>Pharmacists</span>
-            </a>
-          </li>
-        </ul>
-      </li> -->
-
 
 	
-			<li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="fa fa-medkit"></i>
-          <span>Medicines</span>
+			 <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#Medicine" data-bs-toggle="collapse" href="#">
+          <i class="fa fa-medkit"></i><span>Medicines</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      </li> 
+        <ul id="Medicine" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a  href="<?php echo base_url('Receptionists/add');?>">
+              <i class="fa fa-tasks" style="font-size:12px"></i><span>Medicine Categories</span>
+            </a>
+          </li>
+          <li>
+            <a  href="<?=base_url('Receptionists')?>">
+              <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Medicine </span>
+            </a>
+          </li>
+
+           <li>
+            <a  href="<?=base_url('Receptionists')?>">
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Medicines </span>
+            </a>
+          </li> 
+        </ul>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav_rec" data-bs-toggle="collapse" href="#">
-          <i class="bi-reception-3"></i><span>Receptionists</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa fa-user"></i><span>Receptionists</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav_rec" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
