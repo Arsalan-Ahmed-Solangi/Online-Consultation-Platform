@@ -82,6 +82,7 @@ class Doctors extends CI_Controller {
 			$this->add();
 		}else
 		{
+			$_FILES['file']['name'] = "doctors".time().".png";
 			$name = $_FILES['file']['name'] ?? null ;
 
 			//******Start of Add Profile Picture***********//
@@ -127,7 +128,7 @@ class Doctors extends CI_Controller {
                     'doctor_address'   			=> $address ?? null,
                     'doctor_status'             => $status_id ?? null,
                     'dept_id'             	=> $dept_id ?? null, 
-                    'created_at'			=> date("Y-m-d"),
+                    // 'created_at'			=> date("Y-m-d"),
                 );
                 //***End of Setting Data********//       
 
@@ -150,6 +151,126 @@ class Doctors extends CI_Controller {
             
 	}
 	//****End of create doctor*********//
+
+
+	//***Start of Edit Doctor*******//
+	public function edit($doctor_id)
+	{
+		//***Start of Get Doctors******//
+		$data['doctor'] = $this->Database->selectWhere('doctors',array('doctor_status !=' => 3));
+		$data['departments'] = $this->Database->select('departments',array('status_id !=' => 3));
+		//***End of Get Doctors*******//
+
+		$title['title'] = "Edit Doctor";
+		$this->load->view('Includes/header',$title);
+		$this->load->view('Admin/edit_doctor',$data);
+		$this->load->view('Includes/footer');
+	}
+	//***End of Edit Doctor*******//
+
+	//***Start of Update Doctor******//
+	public function update($doctor_id){
+
+		//**Start of Valdiation rules*******//
+		$this->form_validation->set_error_delimiters('<div class="alert alert-danger error" >','</div>');
+        $this->form_validation->set_rules('doctor_name', 'Full Name', 'required|trim|max_length[20]');
+        $this->form_validation->set_rules('username','Username','required|trim');
+        $this->form_validation->set_rules('gender','Gender','required');
+        $this->form_validation->set_rules('phone_no','Phone No','required|numeric|max_length[11]'); 
+        $this->form_validation->set_rules('dob','Date of Birth','required'); 
+        $this->form_validation->set_rules('address', 'Address', 'required');
+        $this->form_validation->set_rules('dept_id', 'Department', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required'); 
+
+        //****End of Validation rules********//
+
+         //***Start of Check Validation*********//
+		if($this->form_validation->run() == FALSE)
+		{
+			$this->edit($doctor_id);
+		}else
+		{
+
+			 	//***Start of Getting Input Fields*******//
+				$doctor_name = $this->input->post('doctor_name');
+                $username = $this->input->post('username');
+                $phone_no = $this->input->post('phone_no');
+                $dob = $this->input->post('dob');
+                $gender = $this->input->post('gender');
+                $address = $this->input->post('address');
+                $dept_id = $this->input->post('dept_id');
+                $password = $this->input->post('password');
+              
+           		//***End of Getting Input Fields*********//
+
+                //*****Start of Setting Data********//
+           		 $data = array
+                (
+                    'doctor_name'      		=> $doctor_name ?? null,
+                    'username'              => $username ?? null,
+                    'password'              => $password ?? null,
+                    'doctor_gender'    			=> $gender ?? null,
+                    'doctor_dob'      			 	=> $dob ?? null,
+                    'doctor_phone'    		 	=> $phone_no ?? null,
+               
+                    'doctor_address'   			=> $address ?? null,
+                    'dept_id'             	=> $dept_id ?? null, 
+                );
+                //***End of Setting Data********// 
+
+
+
+                //*****Start of Upload Image**********//
+                if(isset($_FILES['file']['name']) && !empty($_FILES['file']['name'])){
+
+                	$_FILES['file']['name'] = "doctors".time().".png";
+                	
+               
+                	//******Start of Add Profile Picture***********//
+					$config['upload_path'] = './assets/uploads/doctors/';
+		            $config['allowed_types']        = 'jpeg|jpg|png';
+		            $config['max_size']             = 1024;
+		            $config['overwrite'] = TRUE; //overwrite user avata
+		            $config['file_name'] 			 = $_FILES['file']['name'];
+		            $this->upload->initialize($config);
+		            if ( ! $this->upload->do_upload('file'))
+		            {
+		            	
+		            	$error = array('error' => $this->upload->display_errors());
+
+		            	$this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">'.$error.'</div>');
+							redirect('Doctors/edit/'.$doctor_id);
+		           	}else{
+		           		$data['doctor_pic'] = $_FILES['file']['name'];
+		           	}
+
+                }
+                //****End of Upload Image************//
+
+                $result = $this->Database->selectAll("doctors",array("username"=>$username,"doctor_id !=" => $doctor_id));
+
+                if(count($result) == 0){
+
+	               	$result = $this->Database->update('doctors',array("doctor_id"=>$doctor_id),$data);    
+	                if($result){
+							$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center"> Doctor Updated successfully!</div>');
+							redirect('Doctors');
+	                }else{
+	                	
+	                	$this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Failed to created</div>');
+	                                          redirect('Doctors/edit/'.$doctor_id);
+	                }   
+
+                }else{
+                	$this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Username is already exits</div>');
+	                                        redirect('Doctors/edit/'.$doctor_id);
+                }
+
+            
+		}
+		//***End of Check Validation****//
+	}
+	//****End of Update Doctor*******//
 
 	//****Start of Change Doctor Status********//
 	public function status($doctor_id,$status_id){

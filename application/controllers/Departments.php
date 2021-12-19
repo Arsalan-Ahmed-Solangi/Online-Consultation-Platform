@@ -18,7 +18,7 @@ class Departments extends CI_Controller {
 
 
 		//***Start of Get Departments******//
-		$data['departments'] = $this->Database->select('departments',array('status_id'!=3));
+		$data['departments'] = $this->Database->select('departments',array('status_id !=' => 3));
 		//***End of Get Departments*******//
 
 		$title['title'] = "Departments";
