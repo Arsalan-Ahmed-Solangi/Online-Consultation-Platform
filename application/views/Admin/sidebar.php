@@ -79,12 +79,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?=base_url()?>addAppointment">
+            <a href="<?=base_url('Appointments/add')?>">
                <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Appointment</span>
             </a>
           </li>
           <li>
-            <a href="<?=base_url()?>viewAppointments">
+            <a href="<?=base_url('Appointments')?>">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Appointment</span>
             </a>
           </li>
@@ -114,7 +114,9 @@
         </ul>
       </li>
 
-
+         <li class="nav-item">
+          <hr/>
+         </li>
 	
 			 <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#Medicine" data-bs-toggle="collapse" href="#">
@@ -146,7 +148,7 @@
         <ul id="icons-nav_rec" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a  href="<?php echo base_url('Receptionists/add');?>">
-              <i class="bi-reception-3" style="font-size:12px"></i><span>Add Receptionist</span>
+              <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Receptionist</span>
             </a>
           </li>
           <li>
@@ -182,7 +184,7 @@
         <ul id="icons-nav_notices" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a  href="<?php echo base_url('Notices/add');?>">
-              <i class="fa fa-bell" style="font-size:12px"></i><span>Add Notice</span>
+              <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Notice</span>
             </a>
           </li>
           <li>
@@ -199,7 +201,7 @@
         <ul id="icons-nav_faq" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a  href="<?php echo base_url('Faq/add');?>">
-              <i class="fa fa-question-circle" style="font-size:12px"></i><span>Add Faq</span>
+              <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Faq</span>
             </a>
           </li>
           <li>
@@ -212,12 +214,12 @@
      
 
 
-      <li class="nav-item">
+     <!--  <li class="nav-item">
         <a class="nav-link collapsed" href="pages-blank.html">
           <i class="fa fa-cog"></i>
           <span>Website Settings</span>
         </a>
-      </li>
+      </li> -->
 
     </ul>
 

@@ -19,46 +19,66 @@ class Reset extends CI_Controller {
 		$roles['roles'] = $roles;
 		$title['title'] = "Reset Password";
 		$this->load->view('Includes/header.php',$title);
-		$this->load->view('forgot_password',$roles);
+		$this->load->view('Reset',$roles);
 		$this->load->view('Includes/footer.php');
 	}
 	//****End of Reset Page*********//
 
-	//****Start of Add Department********//
-	public function forgotPassword()
+	//****Start of Verify Password********//
+	public function verify()
 	{
-		$title['title'] = "forgot";
-	
-		if($this->input->post('username'))
-		{
-			$dataArray = $this->input->post();
-			$tableName='';
-			if(isset($dataArray['role']) && $dataArray['role'] ==1)
-			{
-				$tableName='admins';
-			}else if(isset($dataArray['role']) && $dataArray['role'] ==2){
-				$tableName='doctors';
-			}else if(isset($dataArray['role']) && $dataArray['role'] ==3){
-				$tableName='patients';
-			}
-			else if(isset($dataArray['role']) && $dataArray['role'] ==4){
-				$tableName='receptionists';
-			}
-			
-			$users = $this->Database->selectWhere($tableName,array('username'=>$dataArray['username']));
-			$users['users'] = $users;
-		 
-			$this->load->view('Includes/header',$title);
-			$this->load->view('forgot_password',$users);
-			$this->load->view('Includes/footer');
+		
+		
+		//***Start of Setting Rules*****//
+		$this->form_validation->set_error_delimiters('<div class="alert alert-danger error" >','</div>');
+	    $fullname=	$this->form_validation->set_rules('username', 'Username', 'required|trim');
+		$this->form_validation->set_rules('role','User Role','required');
+		//***End of Setting Rules******//
 
-		}else{
+		//***Start of Check Valdiation********//
+		if($this->form_validation->run() == FALSE){
 			$this->index();
-		}
-		
-		
+		}else{
+
+
+			//***Start of Getting Inputs******//
+			$username = $this->input->post('username');
+			$role_id = $this->input->post('role');
+			//***End of Getting Inputs******//
+
+
+			//****Start of Get Role Table*******//
+			$table = "";
+			if($role_id == 1) $table = "admins";
+			else if($role_id == 2) $table = "doctors";
+			else if($role_id == 3) $table = "patients";
+			else if($role_id == 4) $table = "receptionists";
+			else if($role_id == 5) $table = "pharamcists";
+			else{
+				$this->session->set_flashdata('error', '<div class="alert alert-success error" align="center">Username is Invalid</div>');
+				redirect('Reset');
+			}
+			//****End of Get Role Table********//
+
+
+			
+			//***Start of Verify Email*******//
+			$where = array("username" => $username);
+			$result = $this->Database->selectAll($table,$where);
+
+
+
+			if(count($result)){
+					$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center"><b>Your old password is : '.$result[0]['password'].'</b></div>');
+				redirect('Reset');
+			}else{
+				$this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Username is Invalid</div>');
+				redirect('Reset');
+			}
+			//***End of Verify Email*******//
+	
 		
 	}
-	//***End of Add Department**********//
-
+	//***End of Verify Password**********//
+	}
 }
