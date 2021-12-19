@@ -49,21 +49,21 @@
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Receptionist Name <span class="text-danger">*</span></label>
-                                <input value="<?=isset($receptionists['receptionist_name'])?$receptionists['receptionist_name']:''?>"  type="text" maxlength="20" name="receptionist_name" required placeholder="Enter Receptionist Name" class="form-control mt-2">
+                                <input  type="text" maxlength="20" name="receptionist_name" required placeholder="Enter Receptionist Name" class="form-control mt-2">
                                 <?php echo form_error('receptionist_name') ?>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Username<span class="text-danger">*</span></label>
-                                <input value="<?=isset($receptionists['username'])?$receptionists['username']:''?>"  type="text" maxlength="20" name="username" required placeholder="Enter Username" class="form-control mt-2">
+                                <input  type="text" maxlength="20" name="username" required placeholder="Enter Username" class="form-control mt-2">
                                 <?php echo form_error('username') ?>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Receptionist Phone<span class="text-danger">*</span></label>
-                                <input value="<?=isset($receptionists['receptionist_phone'])?$receptionists['receptionist_phone']:''?>"  type="number" maxlength="13" name="receptionist_phone" required placeholder="Enter Receptionist Phone" class="form-control mt-2">
+                                <input    type="number" maxlength="13" name="receptionist_phone" required placeholder="Enter Receptionist Phone" class="form-control mt-2">
                                 <?php echo form_error('receptionist_phone') ?>
                             </div>
                         </div> 
@@ -72,7 +72,7 @@
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Receptionist DOB<span class="text-danger">*</span></label>
-                                <input value="<?=isset($receptionists['receptionist_dob'])?$receptionists['receptionist_dob']:''?>"  type="date" maxlength="20" name="receptionist_dob" required   class="form-control mt-2">
+                                <input   type="date" maxlength="20" name="receptionist_dob" required   class="form-control mt-2">
                                 <?php echo form_error('receptionist_dob') ?>
                             </div>
                         </div>
@@ -81,9 +81,9 @@
                                 <label>Receptionist Gender<span class="text-danger">*</span></label> 
                                 <select name="receptionist_gender" required class="form-select mt-2">
                                     <option value="">---SELECT Gender---</option>
-                                    <option value="male" <?=isset($receptionists['receptionist_gender']) && $receptionists['receptionist_gender'] =='male'?'selected="selected"':''?>>Male</option>
-                                    <option value="female" <?=isset($receptionists['receptionist_gender']) && $receptionists['receptionist_gender'] =='female'?'selected="selected"':''?>>Female</option>
-                                    <option value="other" <?=isset($receptionists['receptionist_gender']) && $receptionists['receptionist_gender'] =='other'?'selected="selected"':''?>>Other</option>
+                                    <option value="male"  >Male</option>
+                                    <option value="female"  >Female</option>
+                                    <option value="other"  >Other</option>
                                 </select> 
                                 <?php echo form_error('receptionist_gender') ?>
                             </div>
@@ -91,7 +91,7 @@
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Receptionist Address<span class="text-danger">*</span></label>
-                                <textarea name="receptionist_address"   class="form-control mt-2" required placeholder="Enter Receptionist Address"><?=isset($receptionists['receptionist_address']) && !empty($receptionists['receptionist_address'])?$receptionists['receptionist_address']:''?></textarea>
+                                <textarea name="receptionist_address"   class="form-control mt-2" required placeholder="Enter Receptionist Address"></textarea>
                                 <?php echo form_error('receptionist_address') ?>
                             </div>
                         </div> 
@@ -102,8 +102,8 @@
                                 <label>Receptionist Status <span class="text-danger">*</span></label>
                                 <select name="Status_id" required class="form-select mt-2">
                                     <option value="">---SELECT STATUS---</option>
-                                    <option value="1" <?=isset($receptionists['status_id']) && $receptionists['status_id'] =='1'?'selected="selected"':''?>>Active</option>
-                                    <option value="2" <?=isset($receptionists['status_id']) && $receptionists['status_id'] =='2'?'selected="selected"':''?>>Inactive</option>
+                                    <option value="1" >Active</option>
+                                    <option value="2"  >Inactive</option>
                                 </select> 
                                 <?php echo form_error('Status_id') ?>
                             </div>
@@ -111,7 +111,7 @@
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Password<span class="text-danger">*</span></label>
-                                <input value="<?=isset($receptionists['password'])?$receptionists['password']:''?>"  type="text" maxlength="20" name="password" required placeholder="Enter Password" class="form-control mt-2">
+                                <input    type="text" maxlength="20" name="password" required placeholder="Enter Password" class="form-control mt-2">
                                 <?php echo form_error('password') ?>
                             </div>
                         </div> 

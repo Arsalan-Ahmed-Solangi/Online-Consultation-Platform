@@ -43,6 +43,7 @@
           <div class="card-header ">
              <h4 class='text-dark'> <i class="bi-reception-3"></i> <?=$title?></h4>
           </div>
+          
             <div class="card-body">
                 <form action="<?php echo base_url('Receptionists/save');?>" method="POST" class="form"  enctype="multipart/form-data">
                     <div class="row mt-2">
@@ -72,7 +73,7 @@
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Receptionist DOB<span class="text-danger">*</span></label>
-                                <input value="<?=isset($receptionists['receptionist_dob'])?$receptionists['receptionist_dob']:''?>"  type="text" maxlength="20" name="receptionist_dob" required placeholder="Enter Receptionist DOB" class="form-control mt-2">
+                                <input value="<?=isset($receptionists['receptionist_dob'])?$receptionists['receptionist_dob']:''?>"  type="date" maxlength="20" name="receptionist_dob" required placeholder="Enter Receptionist DOB" class="form-control mt-2">
                                 <?php echo form_error('receptionist_dob') ?>
                             </div>
                         </div>
@@ -81,9 +82,8 @@
                                 <label>Receptionist Gender<span class="text-danger">*</span></label> 
                                 <select name="receptionist_gender" required class="form-select mt-2">
                                     <option value="">---SELECT Gender---</option>
-                                    <option value="male" <?=isset($receptionists['receptionist_gender']) && $receptionists['receptionist_gender'] =='male'?'selected="selected"':''?>>Male</option>
-                                    <option value="female" <?=isset($receptionists['receptionist_gender']) && $receptionists['receptionist_gender'] =='female'?'selected="selected"':''?>>Female</option>
-                                    <option value="other" <?=isset($receptionists['receptionist_gender']) && $receptionists['receptionist_gender'] =='other'?'selected="selected"':''?>>Other</option>
+                                    <option value="male" <?=isset($receptionists['receptionist_gender']) && $receptionists['receptionist_gender'] =='Male'?'selected="selected"':''?>>Male</option>
+                                    <option value="female" <?=isset($receptionists['receptionist_gender']) && $receptionists['receptionist_gender'] =='Female'?'selected="selected"':''?>>Female</option>
                                 </select> 
                                 <?php echo form_error('receptionist_gender') ?>
                             </div>
@@ -111,14 +111,35 @@
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Password<span class="text-danger">*</span></label>
-                                <input value="<?=isset($receptionists['password'])?$receptionists['password']:''?>"  type="text" maxlength="20" name="password" required placeholder="Enter Password" class="form-control mt-2">
+                                <input value="<?=isset($receptionists['password'])?$receptionists['password']:''?>"  type="password" maxlength="20" name="password" required placeholder="Enter Password" class="form-control mt-2">
                                 <?php echo form_error('password') ?>
                             </div>
                         </div> 
+                        <?php 
+                            if(isset($receptionists['receptionist_pic']) && !empty($receptionists['receptionist_pic']))
+                            {
+                                $required='';
+                            }else{
+                                $required='required';
+                            }
+                        ?>
                         <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="form-group ">
                                 <label>Receptionist Pic<span class="text-danger">*</span></label>
-                                <input   type="file" maxlength="100" name="receptionist_pic"   class="form-control mt-2" accept="image/*" required>
+                                <input   type="file" maxlength="100" name="receptionist_pic"   class="form-control mt-2" accept="image/*" <?=$required?> >
+                                <span><?=isset($receptionists['receptionist_pic'])?$receptionists['receptionist_pic']:''?></span>
+                                <?php echo form_error('receptionist_pic') ?>
+                            </div>
+                        </div>  
+                      
+                        <div class="col-md-4 col-lg-4 col-sm-4 mt-2">
+                            <div class="form-group ">
+                                <label>Uploaded Picture<span class="text-danger">*</span></label>
+                                <br>
+                                <img  src="<?=base_url()?>assets/uploads/receptonists/<?=$receptionists['receptionist_pic']?>" alt="Image" class="media-object img-rounded thumb48 mt-3"  width="200" height="180" style='border: 1px solid'>
+                                <input type='hidden' name='hiddenPicture' value='<?=isset($receptionists['receptionist_pic'])?$receptionists['receptionist_pic']:''?>'>
+                                <input type='hidden' name='hiddenId' value='<?=isset($receptionists['receptionist_id'])?$receptionists['receptionist_id']:''?>'>
+
                                 <?php echo form_error('receptionist_pic') ?>
                             </div>
                         </div> 
@@ -126,7 +147,7 @@
                     <div class="row">
                              <div class="col-md-12 col-lg-12 col-sm-12 offset-md-10">
                                  <div class="form-group mt-3"> 
-                                     <button type="submit"  name="submi" class="btn btn-primary"> Create</button> 
+                                     <button type="submit"  name="submi" class="btn btn-primary"> Update</button> 
 
                                  </div>
                              </div>

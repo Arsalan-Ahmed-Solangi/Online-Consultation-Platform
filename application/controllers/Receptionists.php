@@ -61,7 +61,7 @@ class Receptionists extends CI_Controller {
     /**************************************************************/
 
         public function edit($id=''){
-            $data['receptionists'] = $this->Database->selectWhere('receptionists',array('notice_id'=>$id));
+            $data['receptionists'] = $this->Database->selectWhere('receptionists',array('receptionist_id'=>$id));
             $title['title'] = "Edit Receptionists";
             $this->load->view('Includes/header',$title);
             $this->load->view('Admin/edit_Receptionists',$data);
@@ -107,9 +107,16 @@ class Receptionists extends CI_Controller {
                         if ( ! $this->upload->do_upload('receptionist_pic'))
                         {
                               $error = array('error' => $this->upload->display_errors()); 
-                              echo '<pre/>';
+                            //   echo '<pre/>';
                               $this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">'.print_r($error).'</div>');
-                              $this->add();
+                             
+                              if($this->input->post('hiddenId') && !empty($this->input->post('hiddenId') ))
+                              {   
+                                  $id = $this->input->post('hiddenId');
+                                  $this->edit($id);
+                              }else{
+                                  $this->add();
+                              }
                         }
                         else
                         { 
@@ -118,7 +125,7 @@ class Receptionists extends CI_Controller {
                             /**************************************************************/
                             /*                     Getting  Inputs Data                   */
                             /**************************************************************/
-                
+
                                 $receptionist_name = $this->input->post('receptionist_name');
                                 $username = $this->input->post('username');
                                 $receptionist_phone = $this->input->post('receptionist_phone');
@@ -127,7 +134,13 @@ class Receptionists extends CI_Controller {
                                 $receptionist_address = $this->input->post('receptionist_address');
                                 $Status_id = $this->input->post('Status_id');
                                 $password = $this->input->post('password');
-                                $img = $_FILES['receptionist_pic']['name']; 
+                               
+                                if(isset($_FILES['receptionist_pic']['name']) && !empty($_FILES['receptionist_pic']['name']))
+                                {
+                                    $img = $_FILES['receptionist_pic']['name']; 
+                                }else{
+                                     $img = $this->input->post('hiddenPicture'); 
+                                }
 
                             /**************************************************************/
                             /*                  End   Getting  Inputs Data                */
@@ -149,18 +162,35 @@ class Receptionists extends CI_Controller {
                             /**************************************************************/
                             /*      Create & Updated With  Check Receptionists Edit Id    */
                             /**************************************************************/
-                    
-                                
+                                if( $this->input->post('hiddenId')  && !empty($this->input->post('hiddenId')))
+                                {
+                                 
+                                    $where = array('receptionist_id'=> $this->input->post('hiddenId') );
+                                    $result = $this->Database->update('receptionists',$where,$data);
+                                }else{
                                     $result = $this->Database->insert('receptionists',$data);
-                                
+                                } 
 
                                 if($result)
                                 { 
-                                    $this->session->set_flashdata('success', '<div class="alert alert-success error" align="center"> Receptionists Created successfully!</div>');
-                                    redirect('Receptionists'); 
+                                    if($this->input->post('hiddenId') && !empty($this->input->post('hiddenId') ))
+                                    {
+                                        $this->session->set_flashdata('success', '<div class="alert alert-success error" align="center"> Receptionists Updated successfully!</div>');
+                                        redirect('Receptionists');
+                                    }else{
+                                        $this->session->set_flashdata('success', '<div class="alert alert-success error" align="center"> Receptionists Created successfully!</div>');
+                                        redirect('Receptionists');
+                                    }
+                                    
                                 }else{
                                     $this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Failed to created</div>');
-                                    $this->add(); 
+                                    if($this->input->post('hiddenId')  && !empty($this->input->post('hiddenId') ))
+                                    {
+                                        $id = $this->input->post('hiddenId');
+                                        $this->edit($id);
+                                    }else{
+                                        $this->add();
+                                    }  
                                 }	
 
                                 /**************************************************************/
@@ -168,6 +198,77 @@ class Receptionists extends CI_Controller {
                                 /**************************************************************/
                         }
                                     
+                    }else{
+                            
+                            /**************************************************************/
+                            /*                     Getting  Inputs Data                   */
+                            /**************************************************************/
+
+                            $receptionist_name = $this->input->post('receptionist_name');
+                            $username = $this->input->post('username');
+                            $receptionist_phone = $this->input->post('receptionist_phone');
+                            $receptionist_dob = $this->input->post('receptionist_dob');
+                            $receptionist_gender = $this->input->post('receptionist_gender');
+                            $receptionist_address = $this->input->post('receptionist_address');
+                            $Status_id = $this->input->post('Status_id');
+                            $password = $this->input->post('password');
+                            $img = $this->input->post('hiddenPicture'); 
+                            
+
+                        /**************************************************************/
+                        /*                  End   Getting  Inputs Data                */
+                        /**************************************************************/
+
+                            $data = array
+                            (
+                                'receptionist_name'      => $receptionist_name ?? null,
+                                'username'               => $username ?? null,
+                                'password'               => $password ?? null,
+                                'receptionist_gender'    => $receptionist_gender ?? null,
+                                'receptionist_dob'       => $receptionist_dob ?? null,
+                                'receptionist_phone'     => $receptionist_phone ?? null,
+                                'receptionist_pic'       => $img ?? null,
+                                'receptionist_address'   => $receptionist_address ?? null,
+                                'status_id'              => $Status_id ?? null, 
+                            );
+                
+                        /**************************************************************/
+                        /*      Create & Updated With  Check Receptionists Edit Id    */
+                        /**************************************************************/
+                            if( $this->input->post('hiddenId')  && !empty($this->input->post('hiddenId')))
+                            {
+                             
+                                $where = array('receptionist_id'=> $this->input->post('hiddenId') );
+                                $result = $this->Database->update('receptionists',$where,$data);
+                            }else{
+                                $result = $this->Database->insert('receptionists',$data);
+                            } 
+
+                            if($result)
+                            { 
+                                if($this->input->post('hiddenId') && !empty($this->input->post('hiddenId') ))
+                                {
+                                    $this->session->set_flashdata('success', '<div class="alert alert-success error" align="center"> Receptionists Updated successfully!</div>');
+                                    redirect('Receptionists');
+                                }else{
+                                    $this->session->set_flashdata('success', '<div class="alert alert-success error" align="center"> Receptionists Created successfully!</div>');
+                                    redirect('Receptionists');
+                                }
+                                
+                            }else{
+                                $this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Failed to created</div>');
+                                if($this->input->post('hiddenId')  && !empty($this->input->post('hiddenId') ))
+                                {
+                                    $id = $this->input->post('hiddenId');
+                                    $this->edit($id);
+                                }else{
+                                    $this->add();
+                                }  
+                            }	
+
+                            /**************************************************************/
+                            /*   End  Create & Updated With  Check Receptionists Edit Id  */
+                            /**************************************************************/
                     }
                 }
         }else{
@@ -183,22 +284,22 @@ class Receptionists extends CI_Controller {
    /*            Change Receptionists Status             */
    /******************************************************/
 
-	public function status($notice_id,$status_id){
+	public function status($receptionist_id,$status_id){
 		
 		if($status_id == 1) $data = array('status_id'=>2);
 
 		else if($status_id == 2) $data = array('status_id'=>1);
 		
-		$where = array('notice_id'=>$notice_id);
+		$where = array('receptionist_id'=>$receptionist_id);
 		$result = $this->Database->update("receptionists",$where,$data);
 		if($result){
 			$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Receptionists status changed successfully</div>');
 			 redirect('Receptionists');
 		}else{
 			$this->session->set_flashdata('error', '<div class="alert alert-danger error" align="center">Receptionists status failed!</div>');
-            if(isset($notice_id) && !empty($notice_id))
+            if(isset($receptionist_id) && !empty($receptionist_id))
             {
-                $this->edit($notice_id);
+                $this->edit($receptionist_id);
             }else{
                 $this->add();
             } 
