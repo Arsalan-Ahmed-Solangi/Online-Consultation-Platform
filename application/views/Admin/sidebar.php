@@ -61,12 +61,12 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?=base_url()?>addPatient">
+            <a href="<?php echo base_url('Patients/add');?>">
               <i class="bi bi-circle"></i><span>Add Patient</span>
             </a>
           </li>
           <li>
-            <a href="<?=base_url()?>viewPatient">
+            <a href="<?php echo base_url('Patients');?>">
               <i class="bi bi-circle"></i><span>View Patient</span>
             </a>
           </li>
