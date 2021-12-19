@@ -119,7 +119,7 @@
         </ul>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
           <i class="fa fa-users"></i><span>Human Resources</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -140,7 +140,7 @@
             </a>
           </li>
         </ul>
-      </li><!-- End Icons Nav -->
+      </li> -->
 
 
 	
@@ -150,40 +150,6 @@
           <span>Medicines</span>
         </a>
       </li> 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav_notices" data-bs-toggle="collapse" href="#">
-          <i class="fa fa-bell"></i><span>Notices</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav_notices" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a  href="<?php echo base_url('Notices/add');?>">
-              <i class="fa fa-bell" style="font-size:12px"></i><span>Add Notice</span>
-            </a>
-          </li>
-          <li>
-            <a  href="<?=base_url('Notices')?>">
-              <i class="fa fa-eye" style="font-size:12px"></i><span>View Notices</span>
-            </a>
-          </li> 
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav_faq" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-question-circle"></i><span>F.A.Q</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav_faq" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a  href="<?php echo base_url('Faq/add');?>">
-              <i class="fa fa-question-circle" style="font-size:12px"></i><span>Add Faq</span>
-            </a>
-          </li>
-          <li>
-            <a  href="<?=base_url('Faq')?>">
-              <i class="fa fa-eye" style="font-size:12px"></i><span>View Faq</span>
-            </a>
-          </li> 
-        </ul>
-      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav_rec" data-bs-toggle="collapse" href="#">
           <i class="bi-reception-3"></i><span>Receptionists</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -219,6 +185,42 @@
           </li> 
         </ul>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav_notices" data-bs-toggle="collapse" href="#">
+          <i class="fa fa-bell"></i><span>Notices</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav_notices" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a  href="<?php echo base_url('Notices/add');?>">
+              <i class="fa fa-bell" style="font-size:12px"></i><span>Add Notice</span>
+            </a>
+          </li>
+          <li>
+            <a  href="<?=base_url('Notices')?>">
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Notices</span>
+            </a>
+          </li> 
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav_faq" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-question-circle"></i><span>F.A.Q</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav_faq" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a  href="<?php echo base_url('Faq/add');?>">
+              <i class="fa fa-question-circle" style="font-size:12px"></i><span>Add Faq</span>
+            </a>
+          </li>
+          <li>
+            <a  href="<?=base_url('Faq')?>">
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Faq</span>
+            </a>
+          </li> 
+        </ul>
+      </li>
+     
 
 
       <li class="nav-item">

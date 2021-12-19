@@ -49,7 +49,7 @@
                             <tr>
                                 <th>SR</th>
                                 <th>Pharmacists  Name</th>
-                                <th>username</th>
+                                <th>Username</th>
                                 <th>Pharmacists Phone</th>
                                 <th>Status</th>
                                 <th>Action</th>

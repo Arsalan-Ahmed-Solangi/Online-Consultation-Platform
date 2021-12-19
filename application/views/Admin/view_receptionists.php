@@ -48,8 +48,9 @@
                         <thead>
                             <tr>
                                 <th>SR</th>
-                                <th>Notice Title</th>
-                                <th>Notice Description</th>
+                                <th>Receptionist Name</th>
+                                <th>Username</th>
+                                <th>Phone Number</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
