@@ -40,7 +40,7 @@
                       <i class="fa fa-users"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>145</h6>
+                      <h6><?php echo $patients?></h6>
                     </div>
                   </div>
                 </div>
@@ -63,7 +63,7 @@
                       <i class="fa fa-user-md"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>20</h6>
+                      <h6><?php echo $doctors?></h6>
                      
                     </div>
                   </div>
@@ -86,7 +86,7 @@
                       <i class="fa fa-address-card text-danger"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>20</h6>
+                      <h6><?php echo $appointments?></h6>
                      
                     </div>
                   </div>
@@ -153,8 +153,5 @@
     </section>
 
 
-  <!-- Start of Footer -->
-  <?php  include_once 'footer.php';?>
-  <!-- End of Footer -->
-
+ 
   </main><!-- End #main -->
