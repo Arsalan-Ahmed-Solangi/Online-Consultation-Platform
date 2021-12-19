@@ -45,7 +45,7 @@
 
 			<div class="form-group mt-2">
 				<button type="submit" name="login" class="form-control btn-primary"><i class="fa fa-sign-in"></i>	Login</button>
-				<p class="text-secondary mt-2" align="center"> <a href="" class="text-primary" style="text-decoration: none;">Remind Password</a>  <br/>Don't have an account? <a href="<?php echo base_url('Register');?>" class="text-primary" style="text-decoration: none;">Create Account</a></p>
+				<p class="text-secondary mt-2" align="center"> <a  href="<?php echo base_url('Reset');?>" class="text-primary" style="text-decoration: none;">Remind Password</a>  <br/>Don't have an account? <a href="<?php echo base_url('Register');?>" class="text-primary" style="text-decoration: none;">Create Account</a></p>
 			</div>
 		</form>
 	</div>
