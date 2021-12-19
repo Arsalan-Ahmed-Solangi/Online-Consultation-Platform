@@ -34,12 +34,12 @@
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>	 
             <a href="<?=base_url('Doctors/add')?>">
-              <i class="fa fa-plus-circle"></i><span>Add Doctors</span>
+              <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Doctors</span>
             </a>
           </li>
           <li>
             <a href="<?=base_url('Doctors')?>">
-              <i class="fa fa-eye"></i><span>View Doctors</span>
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Doctors</span>
             </a>
           </li>
           <!-- <li>
