@@ -202,6 +202,24 @@
         </ul>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav_phr" data-bs-toggle="collapse" href="#">
+          <i class="fa fa-user"></i><span>Pharmacists</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav_phr" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a  href="<?php echo base_url('Pharmacists/add');?>">
+              <i class="fa fa-user" style="font-size:12px"></i><span>Add Pharmacist</span>
+            </a>
+          </li>
+          <li>
+            <a  href="<?=base_url('Pharmacists')?>">
+              <i class="fa fa-eye" style="font-size:12px"></i><span>View Pharmacists</span>
+            </a>
+          </li> 
+        </ul>
+      </li>
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-blank.html">
