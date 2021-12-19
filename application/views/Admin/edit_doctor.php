@@ -41,15 +41,15 @@
 		    ?>
 				<div class="card"> 
 				  <div class="card-header ">
-				 	<h4 class='text-dark'> <i class="fa fa-user-md"></i> Add Doctor</h4>
+				 	<h4 class='text-dark'> <i class="fa fa-edit"></i> Edit Doctor</h4>
 				  </div>
 					<div class="card-body">
-				    	<form action="<?php echo base_url('Doctors/create');?>" method="POST" id="form" enctype="multipart/form-data">
+				    	<form action="<?php echo base_url('Doctors/update/'.$doctor['doctor_id']);?>" method="POST" id="form" enctype="multipart/form-data">
 				    		<div class="row mt-2">
 				    			<div class="col-md-6 col-lg-6 col-sm-12">
 				    				<div class="form-group">
 				    					<label>Full Name <span class="text-danger">*</span></label>
-				    					<input   type="text" maxlength="20" name="doctor_name" required placeholder="Enter Full Name" class="form-control">
+				    					<input   type="text" value="<?php echo $doctor['doctor_name']?>" maxlength="20" name="doctor_name" required placeholder="Enter Full Name" class="form-control">
 				    					<?php echo form_error('doctor_name') ?>
 				    				</div>
 				    			</div>
@@ -57,7 +57,7 @@
 				    			<div class="col-md-6 col-lg-6 col-sm-12">
 				    				<div class="form-group">
 				    					<label>Username <span class="text-danger">*</span></label>
-				    						<input   type="email" maxlength="50" name="username" required placeholder="Enter username" class="form-control">
+				    						<input   type="email"  value="<?php echo $doctor['username']?>"  maxlength="50" name="username" required placeholder="Enter username" class="form-control">
 				    					<?php echo form_error('username') ?>
 				    				</div>
 				    			</div>
@@ -68,9 +68,9 @@
 				    				<div class="form-group">
 				    					<label>Gender <span class="text-danger">*</span></label>
 				    					<select name="gender" required class="form-select">
-				    						<option value="">---SELECT GENDER---</option>
-				    						<option value="Male">Male</option>
-				    						<option value="Female">Female</option>
+				    						<option value="" >---SELECT GENDER---</option>
+				    					   <option value="male" <?=isset($doctor['doctor_gender']) && $doctor['doctor_gender'] =='Male'?'selected="selected"':''?>>Male</option>
+                                    <option value="female" <?=isset($doctor['doctor_gender']) && $doctor['doctor_gender'] =='Female'?'selected="selected"':''?>>Female</option>
 				    					</select>
 				    					<?php echo form_error('gender') ?>
 				    				</div>
@@ -79,7 +79,7 @@
 				    			<div class="col-md-6 col-lg-6 col-sm-12">
 				    				<div class="form-group">
 				    					<label>Date of Birth <span class="text-danger">*</span></label>
-				    						<input   type="date" maxlength="50" name="dob" required class="form-control">
+				    						<input   type="date" maxlength="50" name="dob" required class="form-control" value="<?php echo $doctor['doctor_dob'] ?>"/>
 				    					<?php echo form_error('dob') ?>
 				    				</div>
 				    			</div>
@@ -89,7 +89,7 @@
 				    			<div class="col-md-6 col-lg-6 col-sm-12">
 				    				<div class="form-group">
 				    					<label>Phone No <span class="text-danger">*</span></label>
-				    					<input   type="number" placeholder="Enter phone no" maxlength="11" minlength="11" name="phone_no" required class="form-control">
+				    					<input   type="number" value="<?php echo $doctor['doctor_phone'] ?>"  placeholder="Enter phone no" maxlength="11" minlength="11" name="phone_no" required class="form-control">
 				    					<?php echo form_error('phone_no') ?>
 				    				</div>
 				    			</div>
@@ -97,7 +97,7 @@
 				    			<div class="col-md-6 col-lg-6 col-sm-12">
 				    				<div class="form-group">
 				    					<label>Address  <span class="text-danger">*</span></label>
-				    					<textarea name="address" required placeholder="Enter address" class="form-control"></textarea>
+				    					<textarea name="address" required placeholder="Enter address" class="form-control"><?php echo $doctor['doctor_address'] ?></textarea>
 				    					<?php echo form_error('address') ?>
 				    				</div>
 				    			</div>
@@ -114,13 +114,11 @@
 				    							foreach ($departments as $key => $value) {
 				    									
 				    									?>
-				    									<option value="<?php echo $value['dept_id']?>"><?php echo $value['dept_name']?></option>
+				    									<option <?= $doctor['dept_id'] ==  $value['dept_id'] ?'selected="selected"':'' ?>        value="<?php echo $value['dept_id']?>"><?php echo $value['dept_name']?></option>
 				    									<?php
 
 				    							}
-
 				    						?>
-				    	
 				    					</select>
 				    					<?php echo form_error('dept_id') ?>
 				    				</div>
@@ -129,42 +127,26 @@
 				    			<div class="col-md-6 col-lg-6 col-sm-12">
 				    				<div class="form-group">
 				    					<label>Password<span class="text-danger">*</span></label>
-				    					<input type="password" name="password" required class="form-control" placeholder="Enter account password">
+				    					<input type="password" value="<?php echo $doctor['password']?>"  name="password" required class="form-control" placeholder="Enter account password">
 				    					<?php echo form_error('password') ?>
 
 				    				</div>
 				    			
 				    			</div>
 				    		</div>
-				    			
-
+				    		
 				    		<div class="row mt-2">
-				    			<div class="col-md-6 col-sm-12 col-lg-12">
-				    				<label>Profile Picture <span class="text-danger">*</span></label>
-				    					<input type="file" name="file" required class="form-control" accept="Image/*">
-				    					<?php echo form_error('file') ?>
-
+				    			<div class="col-md-12 col-lg-12 col-sm-12">
+				    				<label>Profile Picture</label>
+				    				<input type="file" name="file" class="form-control" accept="Image/*">
 				    			</div>
-				    			<div class="col-md-6">
-				    					<div class="form-group mt-2">
-				    					<label>Status <span class="text-danger">*</span></label>
-				    					<select name="status_id" required class="form-select">
-				    						<option value="">---SELECT STATUS---</option>
-				    						<option value="1">Active</option>
-				    						<option value="2">Inactive</option>
-				    					</select>
-				    					<?php echo form_error('status_id') ?>
-				    				</div>
-				    			</div>
-
-						 		
-						 		</div>
+				    		</div>
 
 						 		<div class="row">
 						 				<div class="col-md-12 col-lg-12 col-sm-12 offset-md-10">
 						 				<div class="form-group mt-3">
 						 				
-						 					<button type="submit"  name="addDoctor" class="btn btn-primary">Create</button> 
+						 					<button type="submit"  name="editDoctor" class="btn btn-primary">Update</button> 
 
 						 				</div>
 						 			</div>

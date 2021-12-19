@@ -46,7 +46,7 @@
 					<div class="card-body">
 				    	<div class="row mt-2">
 				    		<div class="col-md-4 col-lg-4 col-sm-12">
-				    			<img src="https://familydoctor.org/wp-content/uploads/2018/02/41808433_l.jpg" width="100%" class="img img-fluid img-responsive img-thumbnail shadow-sm">
+				    			<img src="<?php echo base_url('assets/uploads/doctors/'.$doctor[0]['doctor_pic'])?>" width="100%" class="img img-fluid img-responsive img-thumbnail shadow-sm">
 				    		</div>
 				    		<div class="col-md-8 col-lg-8 col-sm-12">
 				    			<div class="row mt-2">
