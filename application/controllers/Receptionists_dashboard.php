@@ -12,7 +12,7 @@ class Receptionists_dashboard extends CI_Controller {
 		$this->load->model('Database');
 
 		// **Start of Check Session****//
-		if(!$admin = $this->session->userdata('admin')){
+		if(!$receptionist = $this->session->userdata('receptionist')){
 			redirect('Login');
 		}
 		// **End of Check Session*****//

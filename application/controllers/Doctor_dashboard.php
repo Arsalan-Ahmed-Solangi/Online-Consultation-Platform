@@ -11,7 +11,7 @@ class Doctor_dashboard extends CI_Controller {
 		$this->load->model('Database');
 
 		// **Start of Check Session****//
-		if(!$admin = $this->session->userdata('admin')){
+		if(!$doctor = $this->session->userdata('doctor')){
 			redirect('Login');
 		}
 		// **End of Check Session*****//

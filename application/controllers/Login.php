@@ -16,16 +16,16 @@ class Login extends CI_Controller {
 			redirect('Admin');
 		}else if($this->session->userdata('doctor'))
 		{
-
+			redirect('Doctor_dashboard');
 		}else if($this->session->userdata('patient'))
 		{
-
+			redirect('Patient_dashboard');
 		}else if($this->session->userdata('receptionist'))
 		{
-
+			redirect('Receptionists_dashboard');
 		}else if($this->session->userdata('pharmacist'))
 		{
-
+			redirect('Admin');
 		}
 		//***End of Check Session********//
 
@@ -75,17 +75,18 @@ class Login extends CI_Controller {
 
 			//**Start of Check Role*****//
 			$table = "";
-			if($role = 1) $table = "admins";
-			if($role == 2) $table = "doctors";
-			if($role == 3) $table = "patients";
-			if($role == 4) $table = "receptionist";
-			if($role == 4) $table = "pharmacist";
+			if($role == 1) $table = "admins";
+			else if($role == 2) $table = "doctors";
+			else if($role == 3) $table = "patients";
+			else if($role == 4) $table = "receptionist";
+			else if($role == 4) $table = "pharmacist";
 			//**End of Check Role*****//
 
 			//***Start of Check Login Crendentials********//
 			 $data = array("username"=>$username ,"password"=>$password);
 			 $result = $this->Database->selectWhere($table,$data);
-			 
+
+		
 			if(!empty($result)){
 
 				
@@ -96,14 +97,17 @@ class Login extends CI_Controller {
 						$this->session->set_userdata("admin",$result);
 					    redirect('Admin');
 					}else if($role == 2){
-						$this->session->set_userdata("doctors",$result);
-					    redirect('Doctor_dasboard');
+						$this->session->set_userdata("doctor",$result);
+					    redirect('Doctor_dashboard');
 					}else if($role == 3){
-
+						$this->session->set_userdata("patient",$result);
+					    redirect('Patient_dashboard');
 					}else if($role == 4 ){
-
-					}else{
-
+						$this->session->set_userdata("receptionist",$result);
+					    redirect('Receptionists_dashboard');
+					}else if($role == 5){
+						// $this->session->set_userdata("doctors",$result);
+					 //    redirect('Doctor_dasboard');
 					}
 
 				}else{
