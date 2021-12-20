@@ -62,39 +62,17 @@
 				    						?>
 				    						<tr>
 				    							<td><?php echo ++$key?></td>
-				    							<td><?php echo $value['dept_name']?></td>
-				    							<td><?php echo $value['dept_desc']?></td>
+				    							<td><?php echo $value['patient_name']?></td>
+				    							<td><?php echo $value['doctor_name']?></td>
+				    							<td><?php echo $value['appointment_date']?></td>
 				    							<td>
-				    								<?php 
-
-				    									if($value['status_id'] == 1){
-				    										?>
-				    										<span class="badge bg-success">Active</span>
-				    										<?php
-				    									}else if($value['status_id'] == 2){
-																?>
-				    										<span class="badge bg-danger">Inactive</span>
-				    										<?php
-				    									}
-
-				    								?>
+				    								<span class="badge bg-dark"><?php echo $value['appointment_status']?></span>
 				    							</td>
 				    							<td>
 
-				    								<?php 
-
-				    									if($value['status_id'] == 1){
-				    										?>
-				    										<a href="<?php echo base_url('Departments/status/').$value['dept_id'].'/'.$value['status_id'];?>" class="badge bg-danger">Inactive</a>
-				    										<?php
-				    									}else if($value['status_id'] == 2){
-				    										?>
-				    										<a href="<?php echo base_url('Departments/status/').$value['dept_id'].'/'.$value['status_id'];?>" class="badge bg-success">Active</a>
-				    										<?php
-				    									}	
-
-				    								?>
-				    								<a href="<?php echo base_url('Departments/edit/').$value['dept_id'];?>" class="badge bg-primary"><i class="fa fa-edit"></i></a>
+				    
+				    								<a href="<?php echo base_url('Appointments/edit/').$value['dept_id'];?>" class="badge bg-primary"><i class="fa fa-edit"></i></a>
+				    								<a href="<?php echo base_url('Appointments/delete/').$value['dept_id'];?>" class="badge bg-danger"><i class="fa fa-trash"></i></a>
 				    							</td>
 				    						</tr>
 				    						<?php

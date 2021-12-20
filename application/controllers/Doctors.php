@@ -9,6 +9,11 @@ class Doctors extends CI_Controller {
 	{
 		parent::__construct(); 
         $this->load->model('Database');
+        // **Start of Check Session****//
+		if(!$admin = $this->session->userdata('admin')){
+			redirect('Login');
+		}
+		// **End of Check Session*****//
 	}
 	//***End of Constructor******//
 
