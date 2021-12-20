@@ -83,7 +83,10 @@ class Receptionists extends CI_Controller {
         {
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger error" >','</div>');
             $this->form_validation->set_rules('receptionist_name', 'Receptionists Name', 'required|trim|max_length[20]');
-            $this->form_validation->set_rules('username','Username','required');
+            if(!$this->input->post('hiddenId'))
+            {
+                $this->form_validation->set_rules('username','Username','trim|required|max_length[50]|valid_email|is_unique[patients.username]');
+            }
             $this->form_validation->set_rules('receptionist_phone','Receptionists Phone','required|numeric|max_length[13]'); 
             $this->form_validation->set_rules('receptionist_dob','Receptionists DOB','required'); 
             $this->form_validation->set_rules('receptionist_address', 'Receptionists Address', 'required');
@@ -100,8 +103,13 @@ class Receptionists extends CI_Controller {
                 
                     if (isset($_FILES['receptionist_pic']['name']) && !empty($_FILES['receptionist_pic']['name']))
                     { 
+                        $_FILES['receptionist_pic']['name'] = "receptionist".time().".png";
+                        $name = $_FILES['receptionist_pic']['name'] ?? null ;
+
                         $config['upload_path']  = "./assets/uploads/receptonists/";
                         $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                        $config['overwrite'] = TRUE; //overwrite user avatar
+                        $config['file_name'] 			 = $name;
                         $this->load->library("upload"); 
                         $this->upload->initialize($config);
                         if ( ! $this->upload->do_upload('receptionist_pic'))

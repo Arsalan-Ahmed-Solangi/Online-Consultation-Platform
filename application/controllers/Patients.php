@@ -83,9 +83,10 @@ class Patients extends CI_Controller {
         { 
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger error" >','</div>');
             $this->form_validation->set_rules('patient_name', 'Patient Name', 'required|trim|max_length[20]');
-          
+            if(!$this->input->post('hiddenId'))
+            {
 			$this->form_validation->set_rules('username', 'username', 'trim|required|max_length[50]|valid_email|is_unique[patients.username]');
-
+             }
             $this->form_validation->set_rules('patient_phone','Patient Phone','required|numeric|max_length[13]'); 
             $this->form_validation->set_rules('patient_dob','Patient DOB','required'); 
             $this->form_validation->set_rules('patient_gender','Patient DOB','required');  
@@ -100,11 +101,17 @@ class Patients extends CI_Controller {
             if($this->form_validation->run() == FALSE){ 
                     $this->add(); 
             }else{ 
-                
+              
                     if (isset($_FILES['patient_profile']['name']) && !empty($_FILES['patient_profile']['name']))
                     { 
+                        $_FILES['patient_profile']['name'] = "patient".time().".png";
+                        $name = $_FILES['patient_profile']['name'] ?? null ;
+
                         $config['upload_path']  = "./assets/uploads/patients/";
                         $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                        $config['max_size']             = 1024;
+                        $config['overwrite'] = TRUE; //overwrite user avatar
+                        $config['file_name'] 			 = $name;
                         $this->load->library("upload"); 
                         $this->upload->initialize($config);
                         if ( ! $this->upload->do_upload('patient_profile'))

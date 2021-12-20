@@ -82,7 +82,10 @@ class Pharmacists extends CI_Controller {
         {
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger error" >','</div>');
             $this->form_validation->set_rules('pharmacist_name', 'Pharmacist Name', 'required|trim|max_length[20]');
-            $this->form_validation->set_rules('username','Username','required');
+            if(!$this->input->post('hiddenId'))
+            {
+			$this->form_validation->set_rules('username', 'username', 'trim|required|max_length[50]|valid_email|is_unique[patients.username]');
+             }
             $this->form_validation->set_rules('pharmacist_phone','Pharmacist Phone','required|numeric|max_length[13]'); 
             $this->form_validation->set_rules('pharmacist_dob','Pharmacist DOB','required'); 
             $this->form_validation->set_rules('pharmacist_gender', 'Pharmacist Gender', 'required');
@@ -100,8 +103,12 @@ class Pharmacists extends CI_Controller {
                 
                     if (isset($_FILES['pharmacist_pic']['name']) && !empty($_FILES['pharmacist_pic']['name']))
                     { 
+                        $_FILES['pharmacist_pic']['name'] = "pharmacist".time().".png";
+                        $name = $_FILES['pharmacist_pic']['name'] ?? null ;
                         $config['upload_path']  = "./assets/uploads/Pharmacists/";
                         $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                        $config['overwrite'] = TRUE; //overwrite user avatar
+                        $config['file_name'] 			 = $name;
                         $this->load->library("upload"); 
                         $this->upload->initialize($config);
                         if ( ! $this->upload->do_upload('pharmacist_pic'))

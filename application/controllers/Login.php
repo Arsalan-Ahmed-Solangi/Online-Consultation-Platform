@@ -96,7 +96,8 @@ class Login extends CI_Controller {
 						$this->session->set_userdata("admin",$result);
 					    redirect('Admin');
 					}else if($role == 2){
-
+						$this->session->set_userdata("doctors",$result);
+					    redirect('Doctor_dasboard');
 					}else if($role == 3){
 
 					}else if($role == 4 ){
