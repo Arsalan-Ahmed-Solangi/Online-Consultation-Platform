@@ -5,7 +5,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center " href="#" data-bs-toggle="dropdown">
-            <?php $name = $this->session->userdata('admin')['name'] ?>
+            <?php $name = $this->session->userdata('receptionist')['receptionist_name'] ?>
             <?php echo strtoupper($name)?> <i class="fa fa-angle-down p-1"></i> 
           </a><!-- End Profile Iamge Icon -->
 

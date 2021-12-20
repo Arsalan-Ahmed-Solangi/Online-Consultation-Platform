@@ -66,13 +66,35 @@
 				    							<td><?php echo $value['doctor_name']?></td>
 				    							<td><?php echo $value['appointment_date']?></td>
 				    							<td>
-				    								<span class="badge bg-dark"><?php echo $value['appointment_status']?></span>
+				    								<?php 
+
+
+				    									if($value['appointment_status'] == "Pending"){
+
+				    										?>
+				    										<span class="badge bg-warning"><?php echo $value['appointment_status']?></span>
+				    										<?php
+
+				    									}else if($value['appointment_status'] == "Confirmed"){
+
+				    										?>
+				    										<span class="badge bg-success"><?php echo $value['appointment_status']?></span>
+				    										<?php
+
+				    									}else if($value['appointment_status'] == "Cancelled"){
+				    										?>
+				    										<span class="badge bg-danger"><?php echo $value['appointment_status']?></span>
+				    										<?php
+				    									}
+
+				    								?>
+				    								
 				    							</td>
 				    							<td>
 
 				    
-				    								<a href="<?php echo base_url('Appointments/edit/').$value['dept_id'];?>" class="badge bg-primary"><i class="fa fa-edit"></i></a>
-				    								<a href="<?php echo base_url('Appointments/delete/').$value['dept_id'];?>" class="badge bg-danger"><i class="fa fa-trash"></i></a>
+				    								<a href="<?php echo base_url('Appointments/edit/').$value['appointment_id'];?>" class="badge bg-primary"><i class="fa fa-edit"></i></a>
+
 				    							</td>
 				    						</tr>
 				    						<?php
