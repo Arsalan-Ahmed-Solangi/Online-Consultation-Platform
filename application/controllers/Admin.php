@@ -28,7 +28,7 @@ class Admin extends CI_Controller {
 		//****Start of Count Doctors , Patients , Appointments********//
 		$doctors = $this->Database->selectAll("doctors",array("doctor_status !=" => 3));
 		$patients = $this->Database->selectAll("patients",array("status_id !=" => 3));
-		$appointments = $this->Database->selectAll("appointments",array("status_id !=" => 3));
+		$appointments = $this->Database->selectAll("appointments",array("status !=" => 3));
 		//****End of Count Doctors , Patients , Appointiments*********//
 
 		//***Start of Get Enquiries******//

@@ -10,30 +10,22 @@ class Appointments extends CI_Controller {
 		parent::__construct(); 
         $this->load->model('Database');
 	}
-	// public function add()
-	// {	
-	// 	$title['title'] = "Add Appointment";
-       
-	// 	$this->load->view('Includes/header',$title);
- //        $this->load->view('Includes/header2',$title);
-	// 	$this->load->view('Admin/navigation',$title);
-	// 	$this->load->view('Admin/sidebar',$title); 
-	// 	$this->load->view('Admin/add_appointment');
-	// 	$this->load->view('Includes/footer.php');
-	// }
-	 
-	// public function view()
-	// {	
-	// 	$title['title'] = "View Appointments";
-       
-	// 	$this->load->view('Includes/header',$title);
- //        $this->load->view('Includes/header2',$title);
-	// 	$this->load->view('Admin/navigation',$title);
-	// 	$this->load->view('Admin/sidebar',$title);
+	//****End of Constructor*******//
 
 
-	// 	$this->load->view('Admin/view_appointment');
-	// 	$this->load->view('Includes/footer.php');
-	// }
+	//****Start of Index*******//
+	public function index(){
+
+	//***Start of Get Departments******//
+	$join = "doctors.dept_id = departments.dept_id";
+	$data['doctors'] = $this->Database->selectJoin('doctors','departments',$join,array('doctor_status != '=>3));
+	//***End of Get Departments*******//
  
+		$title['title'] = "Appointments";
+		$this->load->view('Includes/header',$title);
+		$this->load->view('Admin/view_appointments',$data);
+		$this->load->view('Includes/footer');
+	}
+	//***End of Index********//
+
 }
