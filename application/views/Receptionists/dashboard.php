@@ -10,13 +10,13 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <!-- <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
-      </nav>
+      </nav> -->
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
@@ -27,7 +27,7 @@
           <div class="row">
 
             <!--Start of Show Total Patients -->
-            <div class="col-xxl-4 col-md-4">
+            <!-- <div class="col-xxl-4 col-md-4">
               <div class="card info-card sales-card">
 
                
@@ -46,11 +46,11 @@
                 </div>
 
               </div>
-            </div>
+            </div> -->
             <!-- End of Show Total Patients -->
 
             <!-- Start of Show Total Doctors -->
-            <div class="col-xxl-4 col-md-4">
+            <!-- <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
 
               
@@ -70,11 +70,11 @@
                 </div>
 
               </div>
-            </div>
+            </div> -->
             <!-- End of Show Total Doctors -->
 
             <!-- Start of Show Total Appointments  -->
-            <div class="col-xxl-4 col-md-4">
+            <!-- <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
 
 
@@ -93,12 +93,12 @@
                 </div>
 
               </div>
-            </div>
+            </div> -->
             <!-- End of Show Total Appointments -->
 
   
             <!--Start of Show Total Enquiries -->
-            <div class="col-12">
+            <!-- <div class="col-12">
               <div class="card recent-sales">
 
               
@@ -143,7 +143,7 @@
                 </div>
 
               </div>
-            </div>
+            </div> -->
             <!-- End of Show Total Enquiries-->
 
           </div>

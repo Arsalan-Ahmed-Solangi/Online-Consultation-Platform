@@ -318,7 +318,5 @@ class Receptionists extends CI_Controller {
   /*                End Change Receptionists Status              */
   /***************************************************************/
 
-
   
-
 }

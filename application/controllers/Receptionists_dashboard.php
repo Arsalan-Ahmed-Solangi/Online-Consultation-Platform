@@ -47,6 +47,100 @@ class Receptionists_dashboard extends CI_Controller {
 	}
 	//****End of Receptionists Dashboard*********//
 
+  /***************************************************************/
+  /*                         View Notices                        */
+  /***************************************************************/
   
+  public function viewNotices()
+  {
+	  $data['notices'] = $this->Database->select('notices',array('status_id'!=3));
+	  $data['title'] = "Notices";
+	  $this->load->view('Includes/header',$data);
+	  $this->load->view('Receptionists/view_notices',$data);
+	  $this->load->view('Includes/footer');
+  }
+/***************************************************************/
+/*                    End  View Notices                        */
+/***************************************************************/
 
+/***************************************************************/
+/*                         Listing Patients                    */
+/***************************************************************/
+  
+  public function viewPatients()
+  {
+	  $data['patients'] = $this->Database->select('patients',array('status_id'!=3));
+	  $data['title'] = "Patients";
+	  $this->load->view('Includes/header',$data);
+	  $this->load->view('Receptionists/view_patients',$data);
+	  $this->load->view('Includes/footer');
+  }
+
+/***************************************************************/
+/*                    End  Listing Patients                    */
+/***************************************************************/
+
+/***************************************************************/
+/*                         Show Patients                      */
+/***************************************************************/
+  
+  public function showPatients($id)
+  {
+	 
+	$data['patients'] = $this->Database->selectWhere('patients',array('patient_id'=>$id));
+ 
+	  $title['title'] = "Patients";
+	  $this->load->view('Includes/header',$title);
+	  $this->load->view('Receptionists/show_patients',$data);
+	  $this->load->view('Includes/footer');
+  }
+  
+/***************************************************************/
+/*                    End  Show Patients                       */
+/***************************************************************/
+
+
+/***************************************************************/
+/*                         Listing Doctors                    */
+/***************************************************************/
+  
+public function viewDoctors()
+{
+	$data = array
+	( 
+		'doctor_status'  => 1, 
+	);	 
+	$data['doctors'] = $this->Database->selectAll('doctors',$data);
+	$data['title'] = "Doctors";
+	$this->load->view('Includes/header',$data);
+	$this->load->view('Receptionists/view_doctors',$data);
+	$this->load->view('Includes/footer');
+}
+
+/***************************************************************/
+/*                    End  Listing Doctors                    */
+/***************************************************************/
+
+/***************************************************************/
+/*                         Show Doctors                      */
+/***************************************************************/
+  
+public function showdDoctors($id)
+{
+   
+//   $data['doctors'] = $this->Database->selectWhere('doctors',array('doctor_id'=>$id));
+  $join = "doctors.dept_id = departments.dept_id";
+  $data['doctor'] = $this->Database->selectJoin('doctors','departments',$join,array('doctor_status != '=>3,'doctor_id'=>$id));
+
+
+	$title['title'] = "Doctors";
+	$this->load->view('Includes/header',$title);
+	$this->load->view('Receptionists/show_doctors',$data);
+	$this->load->view('Includes/footer');
+}
+
+/***************************************************************/
+/*                    End  Show Doctors                        */
+/***************************************************************/
+ 
 }
