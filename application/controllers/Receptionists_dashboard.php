@@ -27,18 +27,18 @@ class Receptionists_dashboard extends CI_Controller {
 
 
 		//****Start of Count Doctors , Patients , Appointments********//
-		$doctors = $this->Database->selectAll("doctors",array("doctor_status !=" => 3));
-		$patients = $this->Database->selectAll("patients",array("status_id !=" => 3));
-		$appointments = $this->Database->selectAll("appointments",array("status_id !=" => 3));
+		// $doctors = $this->Database->selectAll("doctors",array("doctor_status !=" => 3));
+		// $patients = $this->Database->selectAll("patients",array("status_id !=" => 3));
+		// $appointments = $this->Database->selectAll("appointments",array("status_id !=" => 3));
 		//****End of Count Doctors , Patients , Appointiments*********//
 
 		//***Start of Get Enquiries******//
 		$data['enquiries'] = $this->Database->select('enquiries');
 		//***End of Get Enquiries*******//
 
-		$data['doctors'] = count($doctors);
-		$data['patients'] = count($patients);
-		$data['appointments'] = count($appointments);
+		// $data['doctors'] = count($doctors);
+		// $data['patients'] = count($patients);
+		// $data['appointments'] = count($appointments);
 
 		$title['title'] = "Dashboard";
 		$this->load->view('Includes/header',$title);
