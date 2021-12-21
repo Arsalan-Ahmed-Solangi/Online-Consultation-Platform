@@ -3,7 +3,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="<?php echo base_url('Admin');?>">
+        <a class="nav-link " href="<?php echo base_url('Patient_dashboard');?>">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -14,12 +14,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?=base_url('Appointments/add')?>">
+            <a href="<?=base_url('Patient_dashboard/viewAppointments')?>">
                <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Appointment</span>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('Appointments')?>">
+            <a href="<?=base_url('Patient_dashboard/viewAppointments')?>">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Appointment</span>
             </a>
           </li>
@@ -38,7 +38,7 @@
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
      
           <li>
-            <a href="<?=base_url('Doctors')?>">
+            <a href="<?=base_url('Patient_dashboard/viewDoctors')?>">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Doctors</span>
             </a>
           </li>

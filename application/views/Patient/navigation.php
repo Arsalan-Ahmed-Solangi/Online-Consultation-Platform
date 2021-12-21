@@ -13,15 +13,15 @@
             
            
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="<?=base_url('Admin/profile')?>">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
+              <a class="dropdown-item d-flex align-items-center" href="<?=base_url('Patient_dashboard/profile')?>">
+                <i class="fa fa-user-cog"></i>
+                <span>Edit Profile</span>
               </a>
             </li>
             <li>
               <hr class="dropdown-divider">
-            
-
+              
+             
            
             <li>
               <a class="dropdown-item d-flex align-items-center" href="<?=base_url('Logout')?>">
