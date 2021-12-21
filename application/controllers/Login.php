@@ -78,8 +78,8 @@ class Login extends CI_Controller {
 			if($role == 1) $table = "admins";
 			else if($role == 2) $table = "doctors";
 			else if($role == 3) $table = "patients";
-			else if($role == 4) $table = "receptionist";
-			else if($role == 4) $table = "pharmacist";
+			else if($role == 4) $table = "receptionists";
+			else if($role == 5) $table = "pharmacist";
 			//**End of Check Role*****//
 
 			//***Start of Check Login Crendentials********//
