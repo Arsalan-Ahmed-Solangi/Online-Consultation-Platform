@@ -14,12 +14,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?=base_url('Appointments/add')?>">
+            <a href="<?=base_url('Receptionists_dashboard/add_appointment')?>">
                <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Appointment</span>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('Appointments')?>">
+            <a href="<?=base_url('Receptionists_dashboard/listingAppointment')?>">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Appointment</span>
             </a>
           </li>
