@@ -28,10 +28,10 @@
           <h4 class='text-dark'> <i class="fa fa-address-card"></i> Add Appointment</h4>
           </div>
           <div class="card-body">
-              <form action="<?php echo base_url('Appointments/create');?>" method="POST" id="form" >
+              <form action="<?php echo base_url('patient_dashboard/createAppointment');?>" method="POST" id="form" >
                 <div class="row mt-2">
 
-                  <div class="col-md-6 col-lg-6 col-sm-12">
+                  <div class="col-md-12 col-lg-12 col-sm-12">
                     <div class="form-group">
                       <label>Doctors<span class="text-danger">*</span></label>
                       <select name="doctor_id" required class="form-select" id="doctor_id">
@@ -52,24 +52,7 @@
 
                 
 
-                  <div class="col-md-6 col-lg-6 col-sm-12">
-                    <div class="form-group">
-                      <label>Patient <span class="text-danger">*</span></label>
-                      <select name="patient_id" required class="form-select" id="patient_id">
-                        <option value="">---SELECT PATIENT---</option>
-                        <?php 
-
-                          foreach ($patients as $key => $value) {
-                            ?>
-                            <option value="<?php echo $value['patient_id']?>"><?php echo $value['patient_name']?></option>
-                            <?php
-                          }
-
-                        ?>
-                      </select>
-                      <?php echo form_error('patient_id') ?>
-                    </div>
-                  </div>
+                 
 
                 </div>
 
@@ -84,24 +67,7 @@
 
                 
                 </div>
-                <div class="row mt-2">
-                
-                  <div class="col-md-12 col-lg-12 col-sm-12">
-                      <div class="form-group mt-2">
-                      <label>Appointment Status <span class="text-danger">*</span></label>
-                      <select name="appointment_status" required class="form-select">
-                        <option value="">---SELECT APPOINTMENT STATUS---</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Confirmed">Confirmed</option>
-                        <option value="Cancelled">Cancelled</option>
-                      </select>
-                      <?php echo form_error('appointment_statuss') ?>
-                    </div>
-                  </div>
-
-              
-                
-                </div>
+             
 
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 offset-md-10">

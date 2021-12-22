@@ -37,7 +37,7 @@
                       <th>Doctor Name</th>
                       <th>Appointment Date</th>
                       <th>Status</th>
-                      <th>Action</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
@@ -54,7 +54,7 @@
                             <?php 
 
 
-                              if($value['appointment_status'] == "Pending"){
+                              if($value['appointment_status'] == "Pending" || $value['appointment_status'] == "pending"){
 
                                 ?>
                                 <span class="badge bg-warning"><?php echo $value['appointment_status']?></span>
@@ -75,12 +75,7 @@
                             ?>
                             
                           </td>
-                          <td>
-
-            
-                            <a href="<?php echo base_url('Patient_dashboard/showAppointment/').$value['appointment_id'];?>" class="badge bg-dark"><i class="fa fa-eye"></i></a>
-
-                          </td>
+                          
                         </tr>
                         <?php
                       }
