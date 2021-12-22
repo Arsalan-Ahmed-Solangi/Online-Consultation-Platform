@@ -76,7 +76,7 @@ class Departments extends CI_Controller {
 
 			if($result){
 
-				$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Department created successfully!</div>');
+				$this->session->set_flashdata('success', '<div class="alert alert-success error" align="center">Your message has been sent. Thank you</div>');
 				redirect('Departments');
 
 			}else{

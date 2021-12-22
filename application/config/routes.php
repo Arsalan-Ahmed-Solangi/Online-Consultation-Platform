@@ -59,3 +59,4 @@ $route['translate_uri_dashes'] = FALSE;
 /*               Admin Profile        */
 /**************************************/
 $route['profile'] = "Admin/profile"; 
+
