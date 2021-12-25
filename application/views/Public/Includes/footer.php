@@ -4,8 +4,9 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-4 col-md-4">
+          </div>
+          <div class="col-lg-4 col-md-4 footer-contact">
             <h3>Medilab</h3>
             <p>
               A108 Adam Street <br>
@@ -16,7 +17,7 @@
             </p>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-4 footer-links ">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
