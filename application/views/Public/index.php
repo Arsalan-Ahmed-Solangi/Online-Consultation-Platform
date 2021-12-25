@@ -189,7 +189,7 @@
 
         <div class="section-title">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="row">
@@ -247,7 +247,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Appointment Section ======= -->
-    <section id="appointment" class="appointment section-bg">
+    <!-- <section id="appointment" class="appointment section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -308,7 +308,8 @@
         </form>
 
       </div>
-    </section><!-- End Appointment Section -->
+    </section> -->
+    <!-- End Appointment Section -->
 
     <!-- ======= Departments Section ======= -->
     <section id="departments" class="departments">
@@ -316,7 +317,7 @@
 
         <div class="section-title">
           <h2>Departments</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="row">
@@ -389,7 +390,7 @@
 
         <div class="section-title">
           <h2>Doctors</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="row">
@@ -473,7 +474,7 @@
 
         <div class="section-title">
           <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="faq-list">
@@ -530,13 +531,13 @@
     </section><!-- End Frequently Asked Questions Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
+    <!-- <section id="testimonials" class="testimonials">
+      <div class="container"> -->
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
+        <!-- <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper"> -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
@@ -549,9 +550,11 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            
+            <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -564,9 +567,10 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
@@ -579,9 +583,10 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
@@ -594,9 +599,10 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
@@ -609,14 +615,16 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
-          </div>
+          <!-- </div>
           <div class="swiper-pagination"></div>
-        </div>
+        </div> -->
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section>
+    <!-- End Testimonials Section -->
 
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
@@ -624,7 +632,7 @@
 
         <div class="section-title">
           <h2>Gallery</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
       </div>
 
@@ -706,7 +714,7 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
       </div>
 
