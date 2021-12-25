@@ -93,7 +93,7 @@
 
       </div>
     </section><!-- End About Section -->
-
+    
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
       <div class="container">
@@ -103,7 +103,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="fas fa-user-md"></i>
-              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="<?=isset($doctors)?count($doctors):0?>" data-purecounter-duration="1" class="purecounter"></span>
               <p>Doctors</p>
             </div>
           </div>
@@ -111,7 +111,7 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <i class="far fa-hospital"></i>
-              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="<?=isset($departments)?count($departments):0?>" data-purecounter-duration="1" class="purecounter"></span>
               <p>Departments</p>
             </div>
           </div>
@@ -119,7 +119,7 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="fa fa-users"></i>
-              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="<?=isset($patients)?count($patients):0?>" data-purecounter-duration="1" class="purecounter"></span>
               <p>Patients</p>
             </div>
           </div>
@@ -127,7 +127,7 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="fa fa-tasks"></i>
-              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="<?=isset($appointments)?count($appointments):0?>" data-purecounter-duration="1" class="purecounter"></span>
               <p>Appointments</p>
             </div>
           </div>
@@ -334,50 +334,63 @@
 
         <div class="faq-list">
           <ul>
-            <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
+            <?php 
+              if(isset($faqs))
+              {
+                $countr=0;
+                foreach($faqs as $faq)
+                {
+                  $countr++;
+                  ?>
+                     <li data-aos="fade-up">
+                      <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq-list-<?=$countr?>"><?=$faq['faq_title']?> <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                      <div id="faq-list-<?=$countr?>" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                        <?=$faq['faq_desc']?>
+                        </p>
+                      </div>
+                    </li>
+                  <?php
+                }
+              }
+            ?>
+           
 
-            <li data-aos="fade-up" data-aos-delay="100">
+            <!-- <li data-aos="fade-up" data-aos-delay="100">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                 <p>
                   Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
                 </p>
               </div>
-            </li>
+            </li> -->
 
-            <li data-aos="fade-up" data-aos-delay="200">
+            <!-- <li data-aos="fade-up" data-aos-delay="200">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                 <p>
                   Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
                 </p>
               </div>
-            </li>
+            </li> -->
 
-            <li data-aos="fade-up" data-aos-delay="300">
+            <!-- <li data-aos="fade-up" data-aos-delay="300">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                 <p>
                   Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
                 </p>
               </div>
-            </li>
+            </li> -->
 
-            <li data-aos="fade-up" data-aos-delay="400">
+            <!-- <li data-aos="fade-up" data-aos-delay="400">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
                 <p>
                   Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
                 </p>
               </div>
-            </li>
+            </li> -->
 
           </ul>
         </div>

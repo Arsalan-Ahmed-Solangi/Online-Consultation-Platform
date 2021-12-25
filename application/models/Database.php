@@ -87,7 +87,7 @@
         	return $result;
 		}
 		//***End of 2 tables Join*******//
- 
+		 
 	//****End of Database Model**********//
 	}
 

@@ -16,7 +16,21 @@ class Home extends CI_Controller {
 		$data['departments'] = $this->Database->select('departments',array('status_id !=' => 3));
 		//***End of Get Departments*******//
 	
+		//***Start of Get Patients******//
+		$data['patients'] = $this->Database->select('patients',array('status_id !=' => 3));
+		//***End of Get Patients*******//
 		 
+		//***Start of Get Doctors******//
+		$data['doctors'] = $this->Database->select('doctors',array('status_id !=' => 3));
+		//***End of Get Doctors*******//
+
+		//***Start of Get Appointments******//
+		$data['appointments'] = $this->Database->select('appointments',array('status_id !=' => 3));
+		//***End of Get Appointments*******//
+
+		//***Start of Get Appointments******//
+		$data['faqs'] = $this->Database->select('faqs',array('status_id !=' => 3));
+		//***End of Get Appointments*******//
 		 
 		$data['title'] = "Health Care System";
 		$this->load->view('public/Includes/header.php',$data);

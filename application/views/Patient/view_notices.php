@@ -54,7 +54,7 @@
                             {
                                
                                 ?>
-                                 <div class="col-lg-4 col-xxl-4 col-md-4">
+                                 <div class="col-lg-12 col-xxl-12 col-md-12">
                                     <div class="card info-card sales-card"> 
                                         <div class="card-body">
                                         <h5 class="card-title"><?=isset($notice['notice_title'])?ucwords($notice['notice_title']):''?></h5>
