@@ -82,8 +82,8 @@
                                 <label>Patients Gender<span class="text-danger">*</span></label> 
                                 <select name="patient_gender" required class="form-select mt-2">
                                     <option value="">---SELECT Gender---</option>
-                                    <option value="male" <?=isset($patients['patient-gender']) && $patients['patient-gender'] =='Male'?'selected="selected"':''?>>Male</option>
-                                    <option value="female" <?=isset($patients['patient-gender']) && $patients['patient-gender'] =='Female'?'selected="selected"':''?>>Female</option>
+                                    <option value="male" <?=isset($patients['patient_gender']) && $patients['patient_gender'] =='Male'?'selected="selected"':''?>>Male</option>
+                                    <option value="female" <?=isset($patients['patient_gender']) && $patients['patient_gender'] =='Female'?'selected="selected"':''?>>Female</option>
                                 </select> 
                                 <?php echo form_error('patient_gender') ?>
                             </div>

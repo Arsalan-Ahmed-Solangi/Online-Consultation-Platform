@@ -55,8 +55,9 @@ class Doctors extends CI_Controller {
 	//****Start of Add Department********//
 	public function add()
 	{
-		$title['title'] = "Add Doctor";
-		$this->load->view('Includes/header',$title);
+		$data['departments'] = $this->Database->select('departments',array('status_id !=' => 3));
+		$data['title'] = "Add Doctor";  
+		$this->load->view('Includes/header',$data);
 		$this->load->view('Admin/add_doctor');
 		$this->load->view('Includes/footer');
 	}
@@ -87,7 +88,9 @@ class Doctors extends CI_Controller {
 			$this->add();
 		}else
 		{
-			$_FILES['file']['name'] = "doctors".time().".png";
+			// $_FILES['file']['name'] = "doctors".time().".png";
+
+			$_FILES['file']['name'] = str_replace(' ', '_', $_FILES['file']['name']); 
 			$name = $_FILES['file']['name'] ?? null ;
 
 			//******Start of Add Profile Picture***********//
@@ -228,8 +231,8 @@ class Doctors extends CI_Controller {
                 //*****Start of Upload Image**********//
                 if(isset($_FILES['file']['name']) && !empty($_FILES['file']['name'])){
 
-                	$_FILES['file']['name'] = "doctors".time().".png";
-                	
+                	// $_FILES['file']['name'] = "doctors".time().".png";
+					$_FILES['file']['name'] = str_replace(' ', '_', $_FILES['file']['name']); 
                
                 	//******Start of Add Profile Picture***********//
 					$config['upload_path'] = './assets/uploads/doctors/';

@@ -69,7 +69,7 @@
                                             <?php 
 
 
-                                                if($value['appointment_status'] == "Pending" || $value['appointment_status'] == "pending")){
+                                                if($value['appointment_status'] == "Pending" || $value['appointment_status'] == "pending"){
 
                                                     ?>
                                                     <span class="badge bg-warning"><?php echo $value['appointment_status']?></span>

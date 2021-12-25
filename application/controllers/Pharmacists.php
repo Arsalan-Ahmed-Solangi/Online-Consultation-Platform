@@ -103,7 +103,8 @@ class Pharmacists extends CI_Controller {
                 
                     if (isset($_FILES['pharmacist_pic']['name']) && !empty($_FILES['pharmacist_pic']['name']))
                     { 
-                        $_FILES['pharmacist_pic']['name'] = "pharmacist".time().".png";
+                        // $_FILES['pharmacist_pic']['name'] = "pharmacist".time().".png";
+                        $_FILES['file']['name'] = str_replace(' ', '_', $_FILES['pharmacist_pic']['name']); 
                         $name = $_FILES['pharmacist_pic']['name'] ?? null ;
                         $config['upload_path']  = "./assets/uploads/Pharmacists/";
                         $config['allowed_types']        = 'gif|jpg|png|jpeg';
@@ -145,7 +146,10 @@ class Pharmacists extends CI_Controller {
                                 
                                 if(isset($_FILES['pharmacist_pic']['name']) && !empty($_FILES['pharmacist_pic']['name']))
                                 {
-                                    $img = $_FILES['pharmacist_pic']['name']; 
+                                    // $img = $_FILES['pharmacist_pic']['name']; 
+
+                                    $img = str_replace(' ', '_', $_FILES['pharmacist_pic']['name']); 
+                                    
                                    
                                 }else{
                                      $img = $this->input->post('hiddenPicture'); 

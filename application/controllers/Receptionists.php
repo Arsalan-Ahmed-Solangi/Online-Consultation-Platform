@@ -103,7 +103,9 @@ class Receptionists extends CI_Controller {
                 
                     if (isset($_FILES['receptionist_pic']['name']) && !empty($_FILES['receptionist_pic']['name']))
                     { 
-                        $_FILES['receptionist_pic']['name'] = "receptionist".time().".png";
+                        // $_FILES['receptionist_pic']['name'] = "receptionist".time().".png";
+                        $_FILES['receptionist_pic']['name']  = str_replace(' ', '_', $_FILES['receptionist_pic']['name']); 
+
                         $name = $_FILES['receptionist_pic']['name'] ?? null ;
 
                         $config['upload_path']  = "./assets/uploads/receptonists/";
@@ -145,7 +147,8 @@ class Receptionists extends CI_Controller {
                                
                                 if(isset($_FILES['receptionist_pic']['name']) && !empty($_FILES['receptionist_pic']['name']))
                                 {
-                                    $img = $_FILES['receptionist_pic']['name']; 
+                                    // $img = $_FILES['receptionist_pic']['name']; 
+                                    $img = str_replace(' ', '_', $_FILES['receptionist_pic']['name']); 
                                 }else{
                                      $img = $this->input->post('hiddenPicture'); 
                                 }

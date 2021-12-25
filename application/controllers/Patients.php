@@ -104,7 +104,9 @@ class Patients extends CI_Controller {
               
                     if (isset($_FILES['patient_profile']['name']) && !empty($_FILES['patient_profile']['name']))
                     { 
-                        $_FILES['patient_profile']['name'] = "patient".time().".png";
+                        // $_FILES['patient_profile']['name'] = "patient".time().".png";
+                        $_FILES['patient_profile']['name']  = str_replace(' ', '_', $_FILES['patient_profile']['name']); 
+                        
                         $name = $_FILES['patient_profile']['name'] ?? null ;
 
                         $config['upload_path']  = "./assets/uploads/patients/";
@@ -149,7 +151,9 @@ class Patients extends CI_Controller {
                                
                                 if(isset($_FILES['patient_profile']['name']) && !empty($_FILES['patient_profile']['name']))
                                 {
-                                    $img = $_FILES['patient_profile']['name']; 
+                                    // $img = $_FILES['patient_profile']['name']; 
+                                    $img = str_replace(' ', '_', $_FILES['patient_profile']['name']); 
+
                                 }else{
                                      $img = $this->input->post('hiddenPicture'); 
                                 }
@@ -163,7 +167,7 @@ class Patients extends CI_Controller {
                                     'patient_name'      => $patient_name ?? null,
                                     'username'          => $username ?? null,
                                     'password'          => $password ?? null,
-                                    'patient-gender'    => $patient_gender ?? null,
+                                    'patient_gender'    => $patient_gender ?? null,
                                     'patient_dob'       => $patient_dob ?? null,
                                     'patient_phone'     => $patient_phone ?? null,
                                     'patient_profile'   => $img ?? null,
@@ -235,7 +239,7 @@ class Patients extends CI_Controller {
 								'patient_name'      => $patient_name ?? null,
 								'username'          => $username ?? null,
 								'password'          => $password ?? null,
-								'patient-gender'    => $patient_gender ?? null,
+								'patient_gender'    => $patient_gender ?? null,
 								'patient_dob'       => $patient_dob ?? null,
 								'patient_phone'     => $patient_phone ?? null,
 								'patient_profile'   => $img ?? null,
