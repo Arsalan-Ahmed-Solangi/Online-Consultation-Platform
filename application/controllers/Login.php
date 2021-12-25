@@ -79,7 +79,7 @@ class Login extends CI_Controller {
 			else if($role == 2) $table = "doctors";
 			else if($role == 3) $table = "patients";
 			else if($role == 4) $table = "receptionists";
-			else if($role == 5) $table = "pharamcists";
+			
 			//**End of Check Role*****//
 
 			//***Start of Check Login Crendentials********//
@@ -91,7 +91,7 @@ class Login extends CI_Controller {
 
 				
 				//***Start of Check User Status*******//
-				if($result['status_id'] == 1){
+				if($result['status_id'] == 1 || $result['doctor_status'] == 1){
 
 					if($role == 1){
 						$this->session->set_userdata("admin",$result);
