@@ -322,26 +322,5 @@ class Patient_dashboard extends CI_Controller {
 /*                    End  Listing Doctors                    */
 /***************************************************************/
 
-/***************************************************************/
-/*                         Show Doctors                      */
-/***************************************************************/
-  
-public function showdDoctors($id)
-{
-   
-//   $data['doctors'] = $this->Database->selectWhere('doctors',array('doctor_id'=>$id));
-  $join = "doctors.dept_id = departments.dept_id";
-  $data['doctor'] = $this->Database->selectJoin('doctors','departments',$join,array('doctor_status != '=>3,'doctor_id'=>$id));
-
-
-	$title['title'] = "Doctors";
-	$this->load->view('Includes/header',$title);
-	$this->load->view('Receptionists/show_doctors',$data);
-	$this->load->view('Includes/footer');
-}
-
-/***************************************************************/
-/*                    End  Show Doctors                        */
-/***************************************************************/
 
 }

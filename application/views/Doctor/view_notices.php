@@ -1,28 +1,12 @@
-<!-- Start of Header-->
-<header id="header" class="header fixed-top d-flex align-items-center">
 
+  <!-- Start of Header-->
+  <?php  include_once 'header.php' ?>
+  <!-- End of Header -->
 
-<!-- Start of Sidebar Top -->
-<div class="d-flex align-items-center justify-content-between">
-<a href="index.html" class="logo d-flex align-items-center">
+  <!-- Start of Sidebar-->
+  <?php include_once 'sidebar.php' ?>
+  <!-- End of Sidebar-->
 
-<span class="d-none d-lg-block">PATIENT PANEL</span>
-</a>
-<i class="bi bi-list toggle-sidebar-btn"></i>
-</div>
-<!-- End of Sidebar Logo -->
-
-
-<!-- Start of Navigation -->
-<?php include_once 'navigation.php';?>
-<!-- End of Navigation -->
-
-</header>
-<!-- End of Header -->
-
-<!-- Start of Sidebar-->
-<?php include_once 'sidebar.php' ?>
-<!-- End of Sidebar-->
 <!-- End of Header  -->
 <main id="main" class="main"  >  
 <section class="section dashboard">
@@ -45,23 +29,23 @@
           </div>
            
         </div>
+        <div class="row">
         <?php 
-        
                         if(isset($notices) && !empty($notices))
                         {
-                            
+                          
                             foreach($notices as $notice)
                             {
                                
                                 ?>
-                                 <div class="col-lg-4 col-xxl-4 col-md-4">
+                                 <div class="col-lg-12 col-xxl-12 col-md-12">
                                     <div class="card info-card sales-card"> 
                                         <div class="card-body">
                                         <h5 class="card-title"><?=isset($notice['notice_title'])?ucwords($notice['notice_title']):''?></h5>
                                             <hr/>
-                                            <div class="d-flex align-items-center">
+                                            <div class=" align-items-center">
                                                  
-                                                <div class="ps-3">
+                                                <div class="">
                                                 <p><?=isset($notice['notice_desc'])?ucwords($notice['notice_desc']):''?></p>
                                                 </div>
                                             </div>
@@ -73,6 +57,7 @@
                         }
                     
                     ?>
+                    </div>
 </div>  
 
 </section> 

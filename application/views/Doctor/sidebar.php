@@ -13,13 +13,9 @@
           <i class="fa fa-address-card"></i><span>Appointments</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        
           <li>
-            <a href="<?=base_url('Appointments/add')?>">
-               <i class="fa fa-plus-circle" style="font-size:12px"></i><span>Add Appointment</span>
-            </a>
-          </li>
-          <li>
-            <a href="<?=base_url('Appointments')?>">
+            <a href="<?=base_url('Doctor_dashboard/viewAppointments')?>">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Appointment</span>
             </a>
           </li>
@@ -38,7 +34,7 @@
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
      
           <li>
-            <a href="<?=base_url('Doctors')?>">
+            <a href="<?=base_url('Doctor_dashboard/doctors')?>">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Doctors</span>
             </a>
           </li>
@@ -51,7 +47,7 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?=base_url()?>viewPatient">
+            <a href="<?=base_url('Doctor_dashboard/viewPatients')?>">
               <i class="fa fa-eye"></i><span>View Patient</span>
             </a>
           </li>
@@ -66,7 +62,7 @@
         </a>
         <ul id="icons-nav_notices" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a  href="<?=base_url('Notices')?>">
+            <a  href="<?=base_url('Doctor_dashboard/viewNotices')?>">
               <i class="fa fa-eye" style="font-size:12px"></i><span>View Notices</span>
             </a>
           </li> 

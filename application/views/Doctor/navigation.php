@@ -13,7 +13,7 @@
             
            
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="<?=base_url('Admin/profile')?>">
+              <a class="dropdown-item d-flex align-items-center" href="<?=base_url('Doctor_dashboard/profile')?>">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>

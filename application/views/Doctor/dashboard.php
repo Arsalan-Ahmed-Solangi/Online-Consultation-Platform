@@ -20,136 +20,90 @@
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-      <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-12">
-          <div class="row">
-
-            <!--Start of Show Total Patients -->
-            <div class="col-xxl-4 col-md-4">
-              <div class="card info-card sales-card">
-
-               
-
-                <div class="card-body">
-                  <h5 class="card-title">Patients <span>| Total</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="fa fa-users"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>145</h6>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <!-- End of Show Total Patients -->
-
-            <!-- Start of Show Total Doctors -->
-            <div class="col-xxl-4 col-md-4">
-              <div class="card info-card revenue-card">
-
-              
-
-                <div class="card-body">
-                  <h5 class="card-title">Doctors <span>| Total</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="fa fa-user-md"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>20</h6>
-                     
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <!-- End of Show Total Doctors -->
-
-            <!-- Start of Show Total Appointments  -->
-            <div class="col-xxl-4 col-md-4">
-              <div class="card info-card revenue-card">
-
-
-                <div class="card-body">
-                  <h5 class="card-title">Appointments <span>| Total</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="fa fa-address-card text-danger"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>20</h6>
-                     
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <!-- End of Show Total Appointments -->
-
-  
-            <!--Start of Show Total Enquiries -->
-            <div class="col-12">
-              <div class="card recent-sales">
-
-              
-                <div class="card-body">
-                  <h5 class="card-title"><i class="fa fa-question-circle"></i> Enquiries</h5>
-
-                  <table class="table table-bordered table-striped table-hover datatable">
-                    <thead>
-                      <tr>
-                        <th scope="col">SR</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Message</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php 
-                    
-
-                      foreach ($enquiries as $key => $value) {
-                          ?>
-                           <tr align="center">
-                            <th scope="row"><a href="#"><?php echo ++$key ?></a></th>
-                            <td><b><?php echo  $value['fullname'] ?></b></td>
-                            <td><?php echo  $value['email'] ?></td>
-                            <td><?php echo  $value['message'] ?></td>
-                            <td>
-                              <a href="<?php echo base_url('Admin/deleteEnquiry/').$value['id'];?>" class="text-danger" style="font-size: 18px;"><i class="fa fa-trash"></i></a>
-                            </td>
-                          </tr>
-                          <?php
-                        }
-
-                      ?>
-                     
-                     
-  
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div>
-            <!-- End of Show Total Enquiries-->
-
+    <div class="card"> 
+          <div class="card-header ">
+          <h4 class='text-dark'> <i class="fa fa-info-circle"></i> Profile Details</h4>
           </div>
-        </div><!-- End Left side columns -->
+          <div class="card-body">
+              <div class="row mt-2">
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                  <?php 
 
-      </div>
+                    if(!empty($doctor[0]['doctor_pic'])){
+                      ?>
+                       <img src="<?php echo base_url('assets/uploads/doctors/'.$doctor[0]['doctor_pic'])?>" width="100%" class="img img-fluid img-responsive img-thumbnail shadow-sm">
+                      <?php
+                    }else{
+                      ?>
+                       <img src="https://365psd.com/images/istock/previews/9734/97343531-businessman-profile-icon-man-avatar-picture-flat-design-vector-icon.jpg" width="100%" class="img img-fluid img-responsive img-thumbnail shadow-sm">
+                      <?php
+                    }
+
+                  ?>
+                 
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-12">
+                  <div class="row mt-2">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <p><b>Full Name  :</b> <?php echo $doctor[0]['doctor_name']?></p>
+                    </div>
+                   <div class="col-lg-6 col-md-6 col-sm-12">
+                      <p><b>Username  :</b> <?php echo $doctor[0]['username']?></p>
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <p><b>Gender  :</b> <?php echo $doctor[0]['doctor_gender']?></p>
+                    </div>
+                     <div class="col-lg-6 col-md-6 col-sm-12">
+                      <p><b>Date of Birth  :</b> <?php echo $doctor[0]['doctor_dob']?></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                   
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <p><b>Phone No  :</b> <?php echo $doctor[0]['doctor_phone']?></p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <p><b>Address  :</b> <?php echo $doctor[0]['doctor_address']?></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <p><b>Created At :</b> <?php echo $doctor[0]['created_at']?></p>
+                    </div>
+                  </div>
+
+                   <div class="col-lg-6 col-md-6 col-sm-12">
+                      <p><b>Status  :</b>
+                      <?php 
+
+                              if($doctor[0]['doctor_status'] == 1){
+                                ?>
+                                <span class="badge bg-success">Active</span>
+                                <?php
+                              }else if($doctor[0]['doctor_status'] == 2){
+                                ?>
+                                <span class="badge bg-danger">Inactive</span>
+                                <?php
+                              }
+
+                            ?>
+                      </p>
+                    </div>
+
+
+                </div>
+              </div>
+          </div>
+        </div>
     </section>
 
 
