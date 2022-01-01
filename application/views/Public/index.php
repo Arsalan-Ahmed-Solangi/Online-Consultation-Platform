@@ -4,8 +4,10 @@
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">healthcaresystem@gmail.com</a>
-        <i class="bi bi-phone"></i> +1 5589 55488 55
+        <i class="bi bi-envelope"></i> <a href="saifvistro123@gmail.com">saifvistro123@gmail.com</a>
+				<i class="bi bi-envelope"></i> <a href="Parveshjesswani1999@gmail.com">Parveshjesswani1999@gmail.com</a>
+				<i class="bi bi-envelope"></i> <a href="memonsalman736@gmail.com">memonsalman736@gmail.com</a>
+        <i class="bi bi-phone"></i> 0315-3357121
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -256,13 +258,7 @@
               <div class="member-info">
                 <h4>Walter White</h4>
                 <span>Chief Medical Officer</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -273,13 +269,7 @@
               <div class="member-info">
                 <h4>Sarah Jhonson</h4>
                 <span>Anesthesiologist</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -290,13 +280,7 @@
               <div class="member-info">
                 <h4>William Anderson</h4>
                 <span>Cardiology</span>
-                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -307,13 +291,7 @@
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
                 <span>Neurosurgeon</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -504,19 +482,23 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>University of Sindh (FET) Department Information Technology</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>saifvistro123@gmail.com</p>
+								<p>Parveshjesswani1999@gmail.com</p>
+								<p>memonsalman736@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>0315-3357121</p>
+								<p>0333-1237579</p>
+								<p>0336-1103137</p>
               </div>
 
             </div>
