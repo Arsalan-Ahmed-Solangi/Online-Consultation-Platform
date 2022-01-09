@@ -46,6 +46,12 @@
       </li><!-- End Forms Nav -->
 
   
+			<li class="nav-item">
+        <a class="nav-link collapsed"  href="<?=base_url('Patient_dashboard/bp_temp')?>">
+				<i class="fa fa-thermometer-half" aria-hidden="true"></i><span>BP Temperature</span>
+        </a>
+        
+      </li>
       
      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav_notice" data-bs-toggle="collapse" href="#">

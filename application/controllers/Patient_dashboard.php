@@ -317,6 +317,14 @@ class Patient_dashboard extends CI_Controller {
 		$this->load->view('Includes/footer');
 	}
 
+	public function bp_temp(){
+		
+		$title['title'] = "How to check BP Temperature";
+		$this->load->view('Includes/header',$title);
+		$this->load->view('Patient/bp_check');
+		$this->load->view('Includes/footer');
+	}
+
 
 /***************************************************************/
 /*                    End  Listing Doctors                    */
